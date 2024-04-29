@@ -5,104 +5,70 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 12:30:27 by alanty            #+#    #+#             */
-/*   Updated: 2024/03/14 14:14:31 by alanty           ###   ########.fr       */
+/*   Created: 2024/03/21 18:28:20 by alanty            #+#    #+#             */
+/*   Updated: 2024/03/22 18:48:42 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_free(char *buffer, char *buf)
-{
-	char	*temp;
-
-	temp = strjoint(buffer, buf);
-	free(buffer);
-	return (temp);
-}
-
-char	*ft_next(char *buffer)
-{
-	int		i;
-	int		j;
-	char	*line;
-
-	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
-	if (!buffer[i])
-	{
-		free(buffer);
-		return (NULL);
-	}
-	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
-	i++;
-	j = 0;
-	while (buffer[i])
-		line[j++] = buffer[i++];
-	free(buffer);
-	return (line);
-}
-
-char	*ft_line(char *buffer)
-{
-	char	*line;
-	int		i;
-
-	i = 0;
-	if (!buffer[i])
-		return (NULL);
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
-	line = ft_calloc(i + 2, sizeof(char));
-	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
-	{
-		line[i] = buffer[i];
-		i++;
-	}
-	if (buffer[i] && buffer[i] == '\n')
-		line[i++] = '\n';
-	return (line);
-}
-
-char	*read_file(int fd, char *res)
+void	remplir_liste(t_liste **lst, t_liste *dernier, int fd)
 {
 	char	*buffer;
-	int		byte_read;
+	int		bytes_lus;
+	int		i;
 
-	if (!res)
-		res = ft_calloc(1, 1);
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	byte_read = 1;
-	while (byte_read > 0)
+	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE);
+	while (!obtenir_nl(*lst))
 	{
-		byte_read = read(fd, buffer, BUFFER_SIZE);
-		if (byte_read == -1)
-		{
-			free(buffer);
-			return (NULL);
-		}
-		buffer[byte_read] = 0;
-		res = ft_free(res, buffer);
-		if (ft_strchr(buffer, '\n'))
+		bytes_lus = read(fd, buffer, BUFFER_SIZE);
+		if (bytes_lus <= 0)
 			break ;
+		i = 0;
+		if (!*lst)
+			*lst = ft_lstnew(buffer[i++]);
+		if (!dernier)
+			dernier = *lst;
+		while (i < bytes_lus)
+		{
+			dernier->suivant = ft_lstnew(buffer[i]);
+			dernier = dernier->suivant;
+			i++;
+		}
 	}
 	free(buffer);
-	return (res);
+}
+
+char	*liste_vers_chaine(t_liste **lst)
+{
+	char	*ligne;
+	t_liste	*tmp;
+	int		longeur;
+	int		i;
+
+	if (*lst == NULL)
+		return (NULL);
+	longeur = obtenir_longeur(*lst, 0);
+	ligne = (char *)malloc(sizeof(char) * (longeur + 1));
+	i = 0;
+	while (i < longeur)
+	{
+		ligne[i] = (*lst)->lettre;
+		tmp = *lst;
+		*lst = (*lst)->suivant;
+		free(tmp);
+		i++;
+	}
+	ligne[longeur] = '\0';
+	return (ligne);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
-	char		*line;
+	static t_liste	*lst;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = read_file(fd, buffer);
-	if (!buffer)
-		return (NULL);
-	line = ft_line(buffer);
-	buffer = ft_next(buffer);
-	return (line);
+	remplir_liste(&lst, dernier(lst), fd);
+	return (liste_vers_chaine(&lst));
 }
