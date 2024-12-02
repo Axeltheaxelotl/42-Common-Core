@@ -59,7 +59,7 @@ void	ft_incrementray(t_recup *recup)
 			recup->ray.mapy += recup->ray.stepy;
 			recup->ray.side = 1;
 		}
-		if (recup->map[recup->ray.mapx][recup->ray.mapy] == '1')
+		if (recup->map[recup->ray.mapx][recup->ray.mapy] == '1' || recup->map[recup->ray.mapx][recup->ray.mapy] == 'P')
 			recup->ray.hit = 1;
 	}
 	ft_drawstartend(recup);

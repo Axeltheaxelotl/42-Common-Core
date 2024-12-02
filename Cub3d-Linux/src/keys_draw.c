@@ -15,7 +15,7 @@ int		ft_key_press(int keycode, t_recup *recup)
 	else if (keycode == ROTATE_RIGHT)
 		recup->data.rotate_right = 1;
 	else if (keycode == 65307)
-		ft_error(recup, "Non jrigole\n");
+		ft_error(recup, "");
 	return (1);
 }
 

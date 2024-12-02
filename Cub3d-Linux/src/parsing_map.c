@@ -67,8 +67,8 @@ int		ft_is_map(char *str, t_recup *recup)
 		{
 			if (str[i] != ' ' && str[i] != '0' && str[i] != '1' \
 					&& str[i] != '2' && str[i] != 'N' && str[i] != 'S' \
-					&& str[i] != 'E' && str[i] != 'W' && str[i] != '\n'
-					&& str[i] != '\t')
+					&& str[i] != 'E' && str[i] != 'W' && str[i] != 'P' \
+					&& str[i] != '\n' && str[i] != '\t')
 			{
 				if (recup->insidemap == 1)
 					recup->wrongcharmap = 2;

@@ -66,6 +66,12 @@ void	*mlx_new_image(void *mlx_ptr,int width,int height);
 **  obsolete : image2 data is stored using bit planes
 **  void	*mlx_new_image2(void *mlx_ptr,int width,int height);
 */
+void mlx_cleanup(void *mlx_ptr);
+/*
+** mlx_new_image_alpha - creates image with alpha channel
+*/
+void	*mlx_new_image_alpha(void *mlx_ptr,int width,int height);
+
 char	*mlx_get_data_addr(void *img_ptr, int *bits_per_pixel,
 			   int *size_line, int *endian);
 /*
@@ -75,7 +81,6 @@ char	*mlx_get_data_addr(void *img_ptr, int *bits_per_pixel,
 int	mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr,
 				int x, int y);
 int	mlx_get_color_value(void *mlx_ptr, int color);
-
 
 /*
 ** dealing with Events
@@ -87,7 +92,7 @@ int	mlx_expose_hook (void *win_ptr, int (*funct_ptr)(), void *param);
 
 int	mlx_loop_hook (void *mlx_ptr, int (*funct_ptr)(), void *param);
 int	mlx_loop (void *mlx_ptr);
-
+int mlx_loop_end (void *mlx_ptr);
 
 /*
 **  hook funct are called as follow :
@@ -115,7 +120,7 @@ int	mlx_destroy_window(void *mlx_ptr, void *win_ptr);
 
 int	mlx_destroy_image(void *mlx_ptr, void *img_ptr);
 
-int	mlx_destroy_dispaly(void *mlx_ptr);
+int	mlx_destroy_display(void *mlx_ptr);
 
 /*
 **  generic hook system for all events, and minilibX functions that

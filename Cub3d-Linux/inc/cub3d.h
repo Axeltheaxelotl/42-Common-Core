@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:30:27 by alanty            #+#    #+#             */
-/*   Updated: 2024/10/23 19:40:03 by alanty           ###   ########.fr       */
+/*   Updated: 2024/12/02 14:26:13 by smasse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,6 +164,7 @@ typedef struct s_recup
 	t_texture	t;
 	t_sprite	s;
 	t_sprxy		*sxy;
+	int			mouse;
 }				t_recup;
 
 int				ft_cub(char *str, t_recup *recup);
@@ -226,6 +227,6 @@ void			ft_atoi3_check(const char *str, t_recup *recup);
 int				ft_lignevide(char *str);
 int				ft_check_save(char *str);
 int				ft_nb_virgule(const char *str);
-void draw_minimap(t_recup *recup);
+void			draw_minimap(t_recup *recup);
 
 #endif

@@ -37,7 +37,8 @@ void	ft_error(t_recup *recup, char *str)
 
 	i = -1;
 	recup->indicateur3 = 1;
-	write(1, "Error\n", 6);
+	if (*str)
+		write(1, "Error\n", 6);
 	write(1, str, ft_strlen(str));
 	if (recup->no)
 		free(recup->no);
@@ -60,7 +61,7 @@ void	ft_error(t_recup *recup, char *str)
 int		ft_exit(t_recup *recup)
 {
 	if (recup->indicateur3 == 0)
-		ft_error(recup, "Non jrigole\n");
+		ft_error(recup, "");
 	if (recup->data.img)
 		mlx_destroy_image(recup->data.mlx_ptr, recup->data.img);
 	if (recup->texture[0].img)
