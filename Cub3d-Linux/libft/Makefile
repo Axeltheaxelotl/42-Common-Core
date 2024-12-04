@@ -6,7 +6,7 @@
 #    By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/13 12:28:50 by smasse            #+#    #+#              #
-#    Updated: 2024/11/21 18:12:01 by smasse           ###   ########.fr        #
+#    Updated: 2024/12/03 18:20:46 by smasse           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,6 @@ SRCS = ft_bzero.c \
 		ft_putchar_fd.c \
 		ft_isdigits.c \
 		ft_putstr_fd.c \
-		./get_next_line/gnl.c\
 		ft_putnbr_fd.c \
 		ft_putendl_fd.c \
 		ft_striteri.c \
@@ -64,8 +63,6 @@ SRCS = ft_bzero.c \
 		ft_other.c\
 		ft_printf.c\
 		ft_put.c\
-		./get_next_line/get_next_line.c\
-		./get_next_line/get_next_line_utils.c\
 		ft_strcpy.c
 		
 OBJS = $(SRCS:%.c=%.o)
@@ -107,7 +104,7 @@ fclean:		clean
 
 re:			fclean all
 
-debug:		CFLAGS += -g
+debug:		CFLAGS = -g3 -fsanitize=address -O0
 debug:		re
 
 .PHONY:		all clean fclean re bonus debug

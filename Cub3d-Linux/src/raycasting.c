@@ -6,11 +6,14 @@
 /*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2024/12/02 14:38:27 by smasse           ###   ########.fr       */
+/*   Updated: 2024/12/03 19:21:35 by smasse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
+
+// Function prototype for ft_animate_doors
+void	ft_animate_doors(t_recup *recup);
 
 // recuperer les adresses des textures pour les stocker dans le structure 'recup'
 void	ft_get_texture_adress(t_recup *recup)
@@ -84,7 +87,7 @@ void	ft_mousedir(t_recup *recup)
 		recup->data.rotate_left = 0;
 	}
 }
-
+void	putgif(t_recup *recup);
 // fonction principale de raycasting qui calcule la projection de chaque rayon
 int	ft_raycasting(t_recup *recup)
 {
@@ -109,16 +112,39 @@ int	ft_raycasting(t_recup *recup)
 	}
 	mlx_put_image_to_window(recup->data.mlx_ptr, recup->data.mlx_win,
 		recup->data.img, 0, 0);
+	putgif(recup);
 	ft_forward_back(recup);
 	ft_left_right(recup);
-		ft_mousedir(recup);
+	ft_mousedir(recup);
 	ft_rotate_right_left(recup);
-	// Échanger les buffers pour éviter le scintillement
+	ft_animate_doors(recup);
 	ft_swap(recup);
 	return (0);
 }
 
-// fonction qui initialise la fenetre et commence la boucle principale du programme
+void	ft_animate_doors(t_recup *recup)
+{
+	for (int i = 0; i < recup->nblines; i++)
+	{
+		for (int j = 0; j < recup->sizeline; j++)
+		{
+			if (recup->map[i][j] == 'P' || recup->map[i][j] == 'O')
+			{
+				double distance = sqrt(pow(recup->ray.posx - i, 2) + pow(recup->ray.posy - j, 2));
+				if (distance < 1.5 && recup->map[i][j] == 'P')
+				{
+					recup->map[i][j] = 'O'; // Door starts to open
+				}
+				else if (distance >= 1.5 && recup->map[i][j] == 'O')
+				{
+					recup->map[i][j] = 'P'; // Door starts to close
+				}
+			}
+		}
+	}
+}
+void load_textures(t_data *data, void *mlx);
+
 int	ft_mlx(t_recup *recup)
 {
 	ft_initialisation2(recup);
@@ -140,6 +166,7 @@ int	ft_mlx(t_recup *recup)
 	recup->data.addr2 = (int *)mlx_get_data_addr(recup->data.img2,
 			&recup->data.bits_per_pixel, &recup->data.line_length,
 			&recup->data.endian);
+	load_textures(&recup->data, recup->data.mlx_ptr);
 	mlx_hook(recup->data.mlx_win, 33, 1L << 17, ft_exit, recup);
 	mlx_hook(recup->data.mlx_win, 2, 1L << 0, ft_key_press, recup);
 	mlx_loop_hook(recup->data.mlx_ptr, ft_raycasting, recup);

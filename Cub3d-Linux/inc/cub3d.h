@@ -6,7 +6,7 @@
 /*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:30:27 by alanty            #+#    #+#             */
-/*   Updated: 2024/12/02 14:26:13 by smasse           ###   ########.fr       */
+/*   Updated: 2024/12/03 18:19:18 by smasse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ typedef struct s_data
 	int			height;
 	void		*img2;
 	int			*addr2;
+	void *textures[82];
 }				t_data;
 
 typedef struct s_recup

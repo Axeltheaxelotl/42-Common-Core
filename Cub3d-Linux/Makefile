@@ -6,7 +6,7 @@
 #    By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/24 15:20:44 by smasse            #+#    #+#              #
-#    Updated: 2024/12/02 11:41:15 by smasse           ###   ########.fr        #
+#    Updated: 2024/12/03 18:18:59 by smasse           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFT_DIR = ./libft
 MLX_DIR = ./minilibx-linux
 LIBFT = $(LIBFT_DIR)/libft.a
 MLX = $(MLX_DIR)/libmlx_Linux.a
-DEBUG_FLAGS = -00 -g -flto
+DEBUG_FLAGS = -00 -g3 -flto
 OBJ_DIR = ./objs
 
 SRCS =	errors.c\
@@ -36,7 +36,8 @@ SRCS =	errors.c\
 		raycasting_utils.c\
 		raycasting.c\
 		save.c\
-		sprites.c
+		sprites.c\
+		gif.c
 
 OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 
@@ -69,7 +70,6 @@ debug:
 	@$(MAKE) all --silent
 $(LIBFT):
 	@if ! make -C $(LIBFT_DIR) --silent ; then echo "$(BLUE)> Error compiling libft <$(END)\n"; exit 1; fi
-
 $(MLX):
 	@if ! make -C $(MLX_DIR) --silent ; then echo "$(BLUE)> Error compiling minilibx-linux <$(END)\n"; exit 1; fi
 

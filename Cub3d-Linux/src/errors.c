@@ -64,6 +64,8 @@ int		ft_exit(t_recup *recup)
 		ft_error(recup, "");
 	if (recup->data.img)
 		mlx_destroy_image(recup->data.mlx_ptr, recup->data.img);
+	if (recup->data.img2)
+		mlx_destroy_image(recup->data.mlx_ptr, recup->data.img2);
 	if (recup->texture[0].img)
 		mlx_destroy_image(recup->data.mlx_ptr, recup->texture[0].img);
 	if (recup->texture[1].img)
@@ -74,7 +76,6 @@ int		ft_exit(t_recup *recup)
 		mlx_destroy_image(recup->data.mlx_ptr, recup->texture[3].img);
 	if (recup->texture[4].img)
 		mlx_destroy_image(recup->data.mlx_ptr, recup->texture[4].img);
-	if (recup->data.mlx_win)
-		mlx_destroy_window(recup->data.mlx_ptr, recup->data.mlx_win);
+	mlx_cleanup(recup->data.mlx_ptr);
 	exit(0);
 }

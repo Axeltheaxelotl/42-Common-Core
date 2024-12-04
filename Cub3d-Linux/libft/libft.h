@@ -6,7 +6,7 @@
 /*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 12:56:10 by smasse            #+#    #+#             */
-/*   Updated: 2024/11/21 19:24:51 by smasse           ###   ########.fr       */
+/*   Updated: 2024/12/03 18:07:07 by smasse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
-size_t				ft_strlen(const char *s);
 void				*ft_memset(void *s, int c, size_t length);
 char				*ft_strchr(const char *s, int ch);
 char				*ft_strrchr(const char *s, int c);
@@ -71,7 +70,6 @@ char				*ft_strcat(char *dest, char *src);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_substr(char const *s, unsigned int start, size_t len);
-char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -97,7 +95,6 @@ char				*printfft_strchr(const char *s, int c);
 int					ft_printf(const char *str, ...);
 int					printfrec_print(unsigned long n, const char *base);
 int					ft_isdigits(char *str);
-char				*get_next_line(int fd);
 int					gnl(int fd, char **line);
 int					ft_open(const char *path, int flags);
 int					ft_close(int fd, char **l, int return_value);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting_move.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
+/*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2024/09/24 11:06:41 by alanty           ###   ########.fr       */
+/*   Updated: 2024/12/03 16:52:48 by smasse           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,33 @@ void	ft_forward_back(t_recup *recup)
 		if (recup->map[(int)(recup->ray.posx + (recup->ray.dirx * recup->
 						ray.movespeed * 2))][(int)recup->ray.posy] == '0' ||
 			recup->map[(int)(recup->ray.posx + (recup->ray.dirx * recup->
-						ray.movespeed * 2))][(int)recup->ray.posy] == 'P')
+						ray.movespeed * 2))][(int)recup->ray.posy] == 'O' ||
+			recup->map[(int)(recup->ray.posx + (recup->ray.dirx * recup->
+						ray.movespeed * 2))][(int)recup->ray.posy] == ' ')
 			recup->ray.posx += recup->ray.dirx * recup->ray.movespeed;
 		if (recup->map[(int)(recup->ray.posx)][(int)(recup->ray.posy +
 					(recup->ray.diry * recup->ray.movespeed * 2))] == '0' ||
 			recup->map[(int)(recup->ray.posx)][(int)(recup->ray.posy +
-					(recup->ray.diry * recup->ray.movespeed * 2))] == 'P')
+					(recup->ray.diry * recup->ray.movespeed * 2))] == 'O' ||
+			recup->map[(int)(recup->ray.posx)][(int)(recup->ray.posy +
+					(recup->ray.diry * recup->ray.movespeed * 2))] == ' ')
 			recup->ray.posy += recup->ray.diry * recup->ray.movespeed;
 	}
 	if (recup->data.back == 1)
 	{
 		if (recup->map[(int)(recup->ray.posx - (recup->ray.dirx * recup->
-						ray.movespeed * 2))][(int)(recup->ray.posy)] == '0' ||
+						ray.movespeed * 2))][(int)recup->ray.posy] == '0' ||
 			recup->map[(int)(recup->ray.posx - (recup->ray.dirx * recup->
-						ray.movespeed * 2))][(int)recup->ray.posy] == 'P')
+						ray.movespeed * 2))][(int)recup->ray.posy] == 'O' ||
+			recup->map[(int)(recup->ray.posx - (recup->ray.dirx * recup->
+						ray.movespeed * 2))][(int)recup->ray.posy] == ' ')
 			recup->ray.posx -= recup->ray.dirx * recup->ray.movespeed;
 		if (recup->map[(int)(recup->ray.posx)][(int)(recup->ray.posy -
 					(recup->ray.diry * recup->ray.movespeed * 2))] == '0' ||
 			recup->map[(int)(recup->ray.posx)][(int)(recup->ray.posy -
-					(recup->ray.diry * recup->ray.movespeed * 2))] == 'P')
+					(recup->ray.diry * recup->ray.movespeed * 2))] == 'O' ||
+			recup->map[(int)(recup->ray.posx)][(int)(recup->ray.posy -
+					(recup->ray.diry * recup->ray.movespeed * 2))] == ' ')
 			recup->ray.posy -= recup->ray.diry * recup->ray.movespeed;
 	}
 }
@@ -51,14 +59,19 @@ void	ft_left_right(t_recup *recup)
 		if (recup->map[(int)(recup->ray.posx + recup->ray.diry *
 					(recup->ray.movespeed * 2))][(int)recup->ray.posy] == '0' ||
 			recup->map[(int)(recup->ray.posx + recup->ray.diry *
-					(recup->ray.movespeed * 2))][(int)recup->ray.posy] == 'P')
+					(recup->ray.movespeed * 2))][(int)recup->ray.posy] == 'O' ||
+			recup->map[(int)(recup->ray.posx + recup->ray.diry *
+					(recup->ray.movespeed * 2))][(int)recup->ray.posy] == ' ')
 			recup->ray.posx += recup->ray.diry * recup->ray.movespeed;
 		if (recup->map[(int)recup->ray.posx][(int)(recup->ray.posy -
 					recup->ray.dirx *
 					(recup->ray.movespeed * 2))] == '0' ||
 			recup->map[(int)recup->ray.posx][(int)(recup->ray.posy -
 					recup->ray.dirx *
-					(recup->ray.movespeed * 2))] == 'P')
+					(recup->ray.movespeed * 2))] == 'O' ||
+			recup->map[(int)recup->ray.posx][(int)(recup->ray.posy -
+					recup->ray.dirx *
+					(recup->ray.movespeed * 2))] == ' ')
 			recup->ray.posy -= recup->ray.dirx * recup->ray.movespeed;
 	}
 	if (recup->data.left == 1)
@@ -66,14 +79,19 @@ void	ft_left_right(t_recup *recup)
 		if (recup->map[(int)(recup->ray.posx - recup->ray.diry *
 					(recup->ray.movespeed * 2))][(int)recup->ray.posy] == '0' ||
 			recup->map[(int)(recup->ray.posx - recup->ray.diry *
-					(recup->ray.movespeed * 2))][(int)recup->ray.posy] == 'P')
+					(recup->ray.movespeed * 2))][(int)recup->ray.posy] == 'O' ||
+			recup->map[(int)(recup->ray.posx - recup->ray.diry *
+					(recup->ray.movespeed * 2))][(int)recup->ray.posy] == ' ')
 			recup->ray.posx -= recup->ray.diry * recup->ray.movespeed;
 		if (recup->map[(int)recup->ray.posx][(int)(recup->ray.posy +
 					recup->ray.dirx *
 					(recup->ray.movespeed * 2))] == '0' ||
 			recup->map[(int)recup->ray.posx][(int)(recup->ray.posy +
 					recup->ray.dirx *
-					(recup->ray.movespeed * 2))] == 'P')
+					(recup->ray.movespeed * 2))] == 'O' ||
+			recup->map[(int)recup->ray.posx][(int)(recup->ray.posy +
+					recup->ray.dirx *
+					(recup->ray.movespeed * 2))] == ' ')
 			recup->ray.posy += recup->ray.dirx * recup->ray.movespeed;
 	}
 }
