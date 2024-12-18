@@ -1,14 +1,8 @@
-# Utiliser Debian comme base
 FROM debian:latest
 
-# Installer NGINX
-RUN apt update && apt install -y nginx && apt clean
+RUN apt update && apt upgrade -y && apt install -y nginx
 
-# Copier un fichier de configuration NGINX personnalisé
-COPY default.conf /etc/nginx/conf.d/
+# Copy the default configuration file into the container
+COPY default /etc/nginx/sites-available/default
 
-# Exposer le port HTTP
-EXPOSE 80
-
-# Commande pour démarrer NGINX
 CMD ["nginx", "-g", "daemon off;"]

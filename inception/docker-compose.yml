@@ -1,23 +1,31 @@
-version: "3.8"
-
 services:
-  wordpress:
-    build: requirements/wordpress/
-    container_name: wordpress
-    volumes:
-      - wp_data:/var/www/html
-    expose:
-      - 9000
-
   nginx:
-    build: requirements/nginx/
-    container_name: nginx
+    build: requirements/nginx
     ports:
       - "80:80"
+    networks:
+      - webnet
     volumes:
-      - wp_data:/var/www/html
+      - ./web:/var/www/html
+  wordpress:
+    build: requirements/wordpress
+    networks:
+      - webnet
+    volumes:
+      - ./web:/var/www/html
     depends_on:
-      - wordpress
+      - mariadb
+  mariadb:
+    build: requirements/mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    networks:
+      - webnet
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+networks:
+  webnet:
 
 volumes:
-  wp_data:
+  mariadb_data:
