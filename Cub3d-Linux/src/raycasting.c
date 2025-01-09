@@ -6,7 +6,7 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2025/01/09 17:15:28 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 17:35:57 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,3 @@ int	ft_raycasting(t_recup *recup)
 	ft_swap(recup);
 	return (0);
 }
-

@@ -6,7 +6,7 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2025/01/09 14:17:22 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 17:28:00 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_parsing_map(char *fichier, t_recup *recup)
 	int	fd;
 
 	fd = open(fichier, O_RDONLY);
-	recup->map = malloc(sizeof(char*) * recup->nblines);
+	recup->map = malloc(sizeof(char *) * recup->nblines);
 	if (!recup->map)
 		return (0);
 	ft_read_map(fd, recup);

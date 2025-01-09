@@ -6,7 +6,7 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2025/01/09 14:41:03 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 17:34:21 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_initialisation2(t_recup *recup)
 {
-	if (!(recup->s.zbuffer = (double *)malloc(sizeof(double) * recup->rx)))
+	recup->s.zbuffer = (double *)malloc(sizeof(double) * recup->rx);
+	if (!recup->s.zbuffer)
 		exit(0);
 	recup->data.forward = 0;
 	recup->data.back = 0;
@@ -66,14 +67,13 @@ void	ft_init_texture(t_recup *recup)
 	recup->t.wallx -= floor((recup->t.wallx));
 }
 
-void	ft_init_sprite(t_recup *recup)
+void	ft_count_sprites(t_recup *recup)
 {
 	int	i;
 	int	j;
 
 	i = -1;
 	recup->s.nbspr = 0;
-	ft_verify_errors(recup);
 	while (++i < recup->nblines)
 	{
 		j = -1;
@@ -83,6 +83,10 @@ void	ft_init_sprite(t_recup *recup)
 				recup->s.nbspr += 1;
 		}
 	}
+}
+
+void	ft_allocate_sprite_memory(t_recup *recup)
+{
 	recup->sxy = (t_sprxy *)malloc(sizeof(t_sprxy) * recup->s.nbspr);
 	if (!recup->sxy)
 		ft_error(recup, "Malloc sxy*");
@@ -92,6 +96,13 @@ void	ft_init_sprite(t_recup *recup)
 	recup->s.dist = (double *)malloc(sizeof(double) * recup->s.nbspr);
 	if (!recup->s.dist)
 		ft_error(recup, "Malloc s.dist*");
+}
+
+void	ft_init_sprite(t_recup *recup)
+{
+	ft_verify_errors(recup);
+	ft_count_sprites(recup);
+	ft_allocate_sprite_memory(recup);
 	ft_init_sprite2(recup, 0, 0, 0);
 	ft_mlx(recup);
 }

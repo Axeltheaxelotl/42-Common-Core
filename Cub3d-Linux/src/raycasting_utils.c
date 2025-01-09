@@ -6,7 +6,7 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2025/01/09 16:01:37 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 17:39:00 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	ft_stepsidedist(t_recup *recup)
 	ft_incrementray(recup);
 }
 
-//incremente la distance du rayon jusqu'a ca qu'il frappe un mur
 void	ft_incrementray(t_recup *recup)
 {
 	while (recup->ray.hit == 0)
@@ -65,7 +64,6 @@ void	ft_incrementray(t_recup *recup)
 	ft_drawstartend(recup);
 }
 
-//calcul ou commence et ou finit la ligne a dessiner pour chaque rayon
 void	ft_drawstartend(t_recup *recup)
 {
 	if (recup->ray.side == 0)
