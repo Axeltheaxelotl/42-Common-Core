@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 12:56:10 by smasse            #+#    #+#             */
-/*   Updated: 2024/12/03 18:07:07 by smasse           ###   ########.fr       */
+/*   Updated: 2025/01/09 18:37:16 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-# if defined(__x86_64__) || defined(_M_X64)
-typedef uint64_t	word_t;
-#  define WORD_SIZE 8
-# else
-typedef uint32_t	word_t;
-#  define WORD_SIZE 4
-# endif
 
 void				ft_bzero(void *s, size_t n);
 int					ft_isalnum(int c);

@@ -6,12 +6,12 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:30:27 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/09 17:02:47 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 18:05:16 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CUB3D_H
-# define _CUB3D_H
+#ifndef CUB3D_H
+# define CUB3D_H
 
 # include "../minilibx-linux/mlx.h"
 # include <fcntl.h>
@@ -201,23 +201,22 @@ typedef struct s_player_params
 
 typedef struct s_player_draw_params
 {
-	int player_pixel_x;
-	int player_pixel_y;
-	int player_size;
-	int pixel_x;
-	int pixel_y;
-	int x;
-	int y;
-} t_player_draw_params;
+	int	player_pixel_x;
+	int	player_pixel_y;
+	int	player_size;
+	int	pixel_x;
+	int	pixel_y;
+	int	x;
+	int	y;
+}			t_player_draw_params;
 
 typedef struct s_map_draw_params
 {
-	int map_x;
-	int map_y;
-	int color;
-	t_draw_params draw_params;
-} t_map_draw_params;
-
+	int				map_x;
+	int				map_y;
+	int				color;
+	t_draw_params	draw_params;
+}			t_map_draw_params;
 
 int				ft_cub(char *str, t_recup *recup);
 void			ft_parsing(char *fichier, t_recup *recup);

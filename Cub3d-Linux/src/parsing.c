@@ -6,7 +6,7 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2025/01/09 17:28:00 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 18:31:33 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,20 +107,4 @@ int	ft_cub(char *str, t_recup *recup)
 	else
 		ft_error(recup, "Nom de la map invalide\n");
 	return (0);
-}
-
-int	main(int argc, char **argv)
-{
-	t_recup	recup;
-
-	recup.save = 0;
-	ft_initialisation(&recup);
-	if (argc == 2 || (argc == 3 && ft_check_save(argv[2]) == 1))
-	{
-		if (argc == 3)
-			recup.save = 1;
-		ft_cub(argv[1], &recup);
-	}
-	else
-		write(1, "Error\nArguments invalides\n", 30);
 }

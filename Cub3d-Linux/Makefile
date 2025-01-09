@@ -6,7 +6,7 @@
 #    By: alanty <alanty@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/24 15:20:44 by smasse            #+#    #+#              #
-#    Updated: 2025/01/09 17:50:28 by alanty           ###   ########.fr        #
+#    Updated: 2025/01/09 18:34:16 by alanty           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,10 @@ SRCS =	errors.c\
 		gif.c\
 		raycasting_utils_2.c\
 		raycasting_move_2.c\
-		get_next_line_utils_2.c
+		get_next_line_utils_2.c\
+		raycasting_init_2.c\
+		main.c\
+		la_boite_a_foutre.c\
 
 OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 

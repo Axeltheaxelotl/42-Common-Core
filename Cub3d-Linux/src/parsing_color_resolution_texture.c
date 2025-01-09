@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_color_resolution_texture.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 17:25:26 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/09 17:25:27 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 18:33:43 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,32 +123,4 @@ void	ft_texture(char *str, t_recup *recup)
 		&& str[0] < 122)
 		recup->erreur = 2;
 	j++;
-}
-
-void	ft_color_resolution(char **str, t_recup *recup)
-{
-	int	i;
-
-	i = 0;
-	recup->i = 1;
-	if (recup->sizeline > 0 && (recup->no == NULL || recup->so == NULL
-			|| recup->we == NULL || recup->ea == NULL || recup->sp == NULL))
-		recup->erreur = 2;
-	if ((recup->no != NULL || recup->so != NULL || recup->we != NULL
-			|| recup->ea != NULL || recup->sp != NULL) && (recup->rx == 0
-			|| recup->ry == 0))
-		recup->erreur = 2;
-	if (*str[i] == 'R')
-	{
-		if (recup->rx != 0 && recup->ry != 0)
-			recup->erreur = 2;
-		recup->rx = ft_atoi2(*str, recup);
-		recup->ry = ft_atoi2(*str, recup);
-		if (ft_atoi2(*str, recup) > 0 || recup->rx == 0 || recup->ry == 0)
-			recup->erreur = 2;
-	}
-	else if (*str[i] == 'F')
-		recup->f = ft_atoi3(*str, recup);
-	else if (*str[i] == 'C')
-		recup->c = ft_atoi3(*str, recup);
 }

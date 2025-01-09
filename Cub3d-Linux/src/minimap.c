@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 17:28:12 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/09 17:28:13 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 18:35:01 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,20 +102,4 @@ void	draw_map(t_recup *recup, t_map_params *params)
 		}
 		map_draw_params.map_y++;
 	}
-}
-
-void	draw_minimap(t_recup *recup)
-{
-	t_map_params	map_params;
-	t_player_params	player_params;
-
-	map_params.start_x = 10;
-	map_params.start_y = 10;
-	map_params.scale_x = 200.0 / recup->sizeline;
-	map_params.scale_y = 200.0 / recup->nblines;
-	player_params.start_x = 10;
-	player_params.start_y = 10;
-	player_params.scale = 200.0 / recup->sizeline;
-	draw_map(recup, &map_params);
-	draw_player(recup, &player_params);
 }
