@@ -33,7 +33,7 @@ void	ft_error2(t_recup *recup)
 
 void	ft_error(t_recup *recup, char *str)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	recup->indicateur3 = 1;
@@ -58,8 +58,10 @@ void	ft_error(t_recup *recup, char *str)
 	ft_error2(recup);
 }
 
-int		ft_exit(t_recup *recup)
+int	ft_exit(t_recup *recup)
 {
+	static int	i = 1;
+
 	if (recup->indicateur3 == 0)
 		ft_error(recup, "");
 	if (recup->data.img)
@@ -76,6 +78,11 @@ int		ft_exit(t_recup *recup)
 		mlx_destroy_image(recup->data.mlx_ptr, recup->texture[3].img);
 	if (recup->texture[4].img)
 		mlx_destroy_image(recup->data.mlx_ptr, recup->texture[4].img);
+	while (i <= 81)
+	{
+		if (recup->data.textures[i])
+			mlx_destroy_image(recup->data.mlx_ptr, recup->data.textures[i++]);
+	}
 	mlx_cleanup(recup->data.mlx_ptr);
 	exit(0);
 }

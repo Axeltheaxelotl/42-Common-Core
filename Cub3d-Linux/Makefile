@@ -6,7 +6,7 @@
 #    By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/24 15:20:44 by smasse            #+#    #+#              #
-#    Updated: 2024/12/03 18:18:59 by smasse           ###   ########.fr        #
+#    Updated: 2024/12/07 22:00:05 by smasse           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ debug:
 	@$(MAKE) -C $(LIBFT_DIR) debug --silent
 	@$(MAKE) -C $(MLX_DIR) debug --silent
 	@$(MAKE) all --silent
+
 $(LIBFT):
 	@if ! make -C $(LIBFT_DIR) --silent ; then echo "$(BLUE)> Error compiling libft <$(END)\n"; exit 1; fi
 $(MLX):
