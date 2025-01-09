@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting_utils_2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 17:26:07 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/09 17:26:10 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 17:58:25 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	ft_mlx(t_recup *recup)
 	if (recup->save == 1)
 		ft_raycasting(recup);
 	recup->data.mlx_win = mlx_new_window(recup->data.mlx_ptr, recup->rx,
-			recup->ry, "Hello world!");
+			recup->ry, "Cul3d");
 	load_textures(&recup->data, recup->data.mlx_ptr);
 	mlx_hook(recup->data.mlx_win, 33, 1L << 17, ft_exit, recup);
 	mlx_hook(recup->data.mlx_win, 2, 1L << 0, ft_key_press, recup);

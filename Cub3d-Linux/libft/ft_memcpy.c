@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:48:00 by smasse            #+#    #+#             */
-/*   Updated: 2024/11/21 15:06:45 by smasse           ###   ########.fr       */
+/*   Updated: 2025/01/09 17:58:00 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t len)
 
 int	main(void)
 {
-	char	src[] = "Hello, world!";
+	char	src[] = ", world!";
 	char	dest[20];
 
 	memcpy(dest, src, strlen(src) + 1);

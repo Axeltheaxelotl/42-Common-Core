@@ -6,7 +6,7 @@
 #    By: alanty <alanty@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/24 15:20:44 by smasse            #+#    #+#              #
-#    Updated: 2025/01/09 17:16:05 by alanty           ###   ########.fr        #
+#    Updated: 2025/01/09 17:50:28 by alanty           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,9 @@ SRCS =	errors.c\
 		save.c\
 		sprites.c\
 		gif.c\
-		raycasting_utils_2.c
+		raycasting_utils_2.c\
+		raycasting_move_2.c\
+		get_next_line_utils_2.c
 
 OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 
