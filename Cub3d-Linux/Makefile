@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+         #
+#    By: alanty <alanty@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/24 15:20:44 by smasse            #+#    #+#              #
-#    Updated: 2024/12/03 18:18:59 by smasse           ###   ########.fr        #
+#    Updated: 2025/01/09 17:16:05 by alanty           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ SRCS =	errors.c\
 		raycasting.c\
 		save.c\
 		sprites.c\
-		gif.c
+		gif.c\
+		raycasting_utils_2.c
 
 OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 

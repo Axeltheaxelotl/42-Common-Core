@@ -6,7 +6,7 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:30:27 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/09 14:30:46 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 17:02:47 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,50 @@ typedef struct s_recup
 	int			mouse;
 }				t_recup;
 
+typedef struct s_draw_params
+{
+	int		start_x;
+	int		start_y;
+	int		end_x;
+	int		end_y;
+	int		color;
+}			t_draw_params;
+
+typedef struct s_map_params
+{
+	int		start_x;
+	int		start_y;
+	double	scale_x;
+	double	scale_y;
+}			t_map_params;
+
+typedef struct s_player_params
+{
+	int		start_x;
+	int		start_y;
+	double	scale;
+}			t_player_params;
+
+typedef struct s_player_draw_params
+{
+	int player_pixel_x;
+	int player_pixel_y;
+	int player_size;
+	int pixel_x;
+	int pixel_y;
+	int x;
+	int y;
+} t_player_draw_params;
+
+typedef struct s_map_draw_params
+{
+	int map_x;
+	int map_y;
+	int color;
+	t_draw_params draw_params;
+} t_map_draw_params;
+
+
 int				ft_cub(char *str, t_recup *recup);
 void			ft_parsing(char *fichier, t_recup *recup);
 int				ft_parsing_map(char *fichier, t_recup *recup);
@@ -236,5 +280,7 @@ int				ft_lignevide(char *str);
 int				ft_check_save(char *str);
 int				ft_nb_virgule(const char *str);
 void			draw_minimap(t_recup *recup);
+void			draw_player(t_recup *recup, t_player_params *params);
+void			draw_map(t_recup *recup, t_map_params *params);
 
 #endif
