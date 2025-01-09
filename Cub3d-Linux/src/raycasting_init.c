@@ -6,13 +6,12 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2024/09/24 11:03:32 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 14:41:03 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-//initialise certaines variables necessaires au raycasting (position du joueur, direction, etc.)
 void	ft_initialisation2(t_recup *recup)
 {
 	if (!(recup->s.zbuffer = (double *)malloc(sizeof(double) * recup->rx)))
@@ -32,7 +31,6 @@ void	ft_initialisation2(t_recup *recup)
 	ft_init_dir(recup);
 }
 
-//initialise les variables liees a un rayon individuel pour chaque colonne de l'ecran
 void	ft_initialisation3(t_recup *recup)
 {
 	recup->ray.hit = 0;
@@ -49,7 +47,6 @@ void	ft_initialisation3(t_recup *recup)
 	ft_init_more3(recup);
 }
 
-//fonction pour initialiser la texture a utiliser en fonction de la direction du mur
 void	ft_init_texture(t_recup *recup)
 {
 	if (recup->ray.side == 0 && recup->ray.raydirx < 0)
@@ -69,11 +66,10 @@ void	ft_init_texture(t_recup *recup)
 	recup->t.wallx -= floor((recup->t.wallx));
 }
 
-//fonction pour initialiser les sprites (objet dans le monde) en parcourant la carte
 void	ft_init_sprite(t_recup *recup)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = -1;
 	recup->s.nbspr = 0;
@@ -87,17 +83,19 @@ void	ft_init_sprite(t_recup *recup)
 				recup->s.nbspr += 1;
 		}
 	}
-	if (!(recup->sxy = (t_sprxy *)malloc(sizeof(t_sprxy) * recup->s.nbspr)))
+	recup->sxy = (t_sprxy *)malloc(sizeof(t_sprxy) * recup->s.nbspr);
+	if (!recup->sxy)
 		ft_error(recup, "Malloc sxy*");
-	if (!(recup->s.order = (int *)malloc(sizeof(int) * recup->s.nbspr)))
+	recup->s.order = (int *)malloc(sizeof(int) * recup->s.nbspr);
+	if (!recup->s.order)
 		ft_error(recup, "Malloc s.order*");
-	if (!(recup->s.dist = (double *)malloc(sizeof(double) * recup->s.nbspr)))
+	recup->s.dist = (double *)malloc(sizeof(double) * recup->s.nbspr);
+	if (!recup->s.dist)
 		ft_error(recup, "Malloc s.dist*");
 	ft_init_sprite2(recup, 0, 0, 0);
 	ft_mlx(recup);
 }
 
-//fonction qui initialise les coordonnees des sprites en fonction de leur position dans le carte
 void	ft_init_sprite2(t_recup *recup, int i, int j, int v)
 {
 	i = i - 1;

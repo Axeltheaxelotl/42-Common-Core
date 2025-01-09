@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebourdit <ebourdit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2020/10/10 14:25:45 by ebourdit         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:17:27 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_dist_order2(t_recup *recup)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < recup->s.nbspr)

@@ -1,8 +1,8 @@
 #include "../inc/cub3d.h"
 
-int			ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int			i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -12,7 +12,7 @@ int			ft_strlen(char *str)
 	return (i);
 }
 
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
@@ -32,13 +32,14 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-char		*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
 	int		j;
 
-	if (!(str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (s1 && s1[i])
@@ -57,7 +58,7 @@ char		*ft_strjoin(char *s1, char *s2)
 	return (str);
 }
 
-char		*ft_subbuff(char *buff, int start, int len)
+char	*ft_subbuff(char *buff, int start, int len)
 {
 	int		i;
 	char	*str;

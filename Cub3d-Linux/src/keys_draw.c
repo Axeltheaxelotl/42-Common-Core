@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   keys_draw.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 12:58:33 by smasse            #+#    #+#             */
-/*   Updated: 2025/01/09 12:58:33 by smasse           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/cub3d.h"
 
-int		ft_key_press(int keycode, t_recup *recup)
+int	ft_key_press(int keycode, t_recup *recup)
 {
 	if (keycode == FORWARD_W_Z)
 		recup->data.forward = 1;
@@ -31,7 +19,7 @@ int		ft_key_press(int keycode, t_recup *recup)
 	return (1);
 }
 
-int		ft_key_release(int keycode, t_recup *recup)
+int	ft_key_release(int keycode, t_recup *recup)
 {
 	if (keycode == FORWARD_W_Z)
 		recup->data.forward = 0;
@@ -48,23 +36,23 @@ int		ft_key_release(int keycode, t_recup *recup)
 	return (1);
 }
 
-int		ft_color_column(t_recup *recup)
+int	ft_color_column(t_recup *recup)
 {
-	int j;
-	int i;
+	int	j;
+	int	i;
 
 	j = -1;
 	recup->ray.drawend = recup->ry - recup->ray.drawstart;
 	i = recup->ray.drawend;
 	while (++j < recup->ray.drawstart)
-		recup->data.addr[j * recup->data.line_length / 4 +
-			recup->ray.x] = recup->c;
+		recup->data.addr[j * recup->data.line_length / 4
+			+ recup->ray.x] = recup->c;
 	if (j <= recup->ray.drawend)
 		ft_draw_texture(recup, recup->ray.x, j);
 	j = i;
 	while (++j < recup->ry)
-		recup->data.addr[j * recup->data.line_length / 4 +
-			recup->ray.x] = recup->f;
+		recup->data.addr[j * recup->data.line_length / 4
+			+ recup->ray.x] = recup->f;
 	return (0);
 }
 
@@ -74,24 +62,24 @@ void	ft_draw_texture(t_recup *recup, int x, int y)
 	ft_init_texture(recup);
 	recup->t.step = 1.0 * recup->texture[0].height / recup->ray.lineheight;
 	recup->t.texx = (int)(recup->t.wallx * (double)recup->texture
-			[recup->t.texdir].width);
+		[recup->t.texdir].width);
 	if (recup->ray.side == 0 && recup->ray.raydirx > 0)
-		recup->t.texx = recup->texture[recup->t.texdir].width -
-			recup->t.texx - 1;
+		recup->t.texx = recup->texture[recup->t.texdir].width
+			- recup->t.texx - 1;
 	if (recup->ray.side == 1 && recup->ray.raydiry < 0)
-		recup->t.texx = recup->texture[recup->t.texdir].width -
-			recup->t.texx - 1;
-	recup->t.texpos = (recup->ray.drawstart - recup->ry / 2 +
-			recup->ray.lineheight / 2) * recup->t.step;
+		recup->t.texx = recup->texture[recup->t.texdir].width
+			- recup->t.texx - 1;
+	recup->t.texpos = (recup->ray.drawstart - recup->ry / 2
+			+ recup->ray.lineheight / 2) * recup->t.step;
 	while (++y <= recup->ray.drawend)
 	{
-		recup->t.texy = (int)recup->t.texpos &
-			(recup->texture[recup->t.texdir].height - 1);
+		recup->t.texy = (int)recup->t.texpos
+			& (recup->texture[recup->t.texdir].height - 1);
 		recup->t.texpos += recup->t.step;
 		if (y < recup->ry && x < recup->rx)
-			recup->data.addr[y * recup->data.line_length / 4 + x] =
-				recup->texture[recup->t.texdir].addr[recup->t.texy *
-					recup->texture[recup->t.texdir].line_length /
-					4 + recup->t.texx];
+			recup->data.addr[y * recup->data.line_length / 4 + x]
+				= recup->texture[recup->t.texdir].addr[recup->t.texy
+				* recup->texture[recup->t.texdir].line_length
+				/ 4 + recup->t.texx];
 	}
 }

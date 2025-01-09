@@ -1,28 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parsing_color_resolution_texture.c                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 12:58:29 by smasse            #+#    #+#             */
-/*   Updated: 2025/01/09 12:58:30 by smasse           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/cub3d.h"
 
-int		ft_atoi2(const char *str, t_recup *recup)
+int	ft_atoi2(const char *str, t_recup *recup)
 {
-	int		sum;
+	int	sum;
 
 	sum = 0;
 	if (str[1] != ' ' || ft_charinstr((char *)str, ',') == 1)
 		recup->erreur = 2;
-	while (str[recup->i] == ' ' || str[recup->i] == '\t'
-			|| str[recup->i] == ',' || str[recup->i] == '\n'
-			|| str[recup->i] == '\r' || str[recup->i] == '\v'
-			|| str[recup->i] == '\f')
+	while (str[recup->i] == ' ' || str[recup->i] == '\t' || str[recup->i] == ','
+		|| str[recup->i] == '\n' || str[recup->i] == '\r'
+		|| str[recup->i] == '\v' || str[recup->i] == '\f')
 		recup->i++;
 	if (str[recup->i] == '-' || str[recup->i] == '+')
 		recup->erreur = 2;
@@ -38,17 +25,17 @@ int		ft_atoi2(const char *str, t_recup *recup)
 	return (sum);
 }
 
-int		ft_atoi3(const char *str, t_recup *recup)
+int	ft_atoi3(const char *str, t_recup *recup)
 {
-	int		verify;
+	int	verify;
 
 	verify = 0;
 	if (str[1] != ' ')
 		recup->erreur = 2;
 	ft_atoi3_check(str, recup);
-	while (str[recup->i] == ' ' || str[recup->i] == '\t' || str[recup->i]
-			== ',' || str[recup->i] == '\n' || str[recup->i] == '\r'
-			|| str[recup->i] == '\v' || str[recup->i] == '\f')
+	while (str[recup->i] == ' ' || str[recup->i] == '\t' || str[recup->i] == ','
+		|| str[recup->i] == '\n' || str[recup->i] == '\r'
+		|| str[recup->i] == '\v' || str[recup->i] == '\f')
 	{
 		recup->i++;
 		verify = 0;
@@ -66,7 +53,9 @@ int		ft_atoi3(const char *str, t_recup *recup)
 	return (recup->sum);
 }
 
-int		ft_path_texture(char *str, char **texture, t_recup *recup, int j)
+int	ft_path_texture_helper(char *str, char **texture, t_recup *recup, int j);
+
+int	ft_path_texture(char *str, char **texture, t_recup *recup, int j)
 {
 	recup->count2 = 0;
 	if (*texture != NULL)
@@ -75,7 +64,7 @@ int		ft_path_texture(char *str, char **texture, t_recup *recup, int j)
 		return (0);
 	}
 	if (ft_charinstr(str, '.') == 0 || ft_charinstr(str, '/') == 0
-			|| ft_strlen2(str) <= 2)
+		|| ft_strlen2(str) <= 2)
 		recup->erreur = 2;
 	while (str[j] != '.')
 	{
@@ -83,7 +72,13 @@ int		ft_path_texture(char *str, char **texture, t_recup *recup, int j)
 			recup->erreur = 2;
 		j++;
 	}
-	if (!(*texture = (char *)(malloc(sizeof(char) * (ft_strlen2(str) + 1)))))
+	return (ft_path_texture_helper(str, texture, recup, j));
+}
+
+int	ft_path_texture_helper(char *str, char **texture, t_recup *recup, int j)
+{
+	*texture = (char *)(malloc(sizeof(char) * (ft_strlen2(str) + 1)));
+	if (!(*texture))
 		recup->erreur = 2;
 	while (str[j] != '\0')
 	{
@@ -112,24 +107,24 @@ void	ft_texture(char *str, t_recup *recup)
 	else if (str[i] == 'S' && str[i + 1] != 'O')
 		ft_path_texture(str, &recup->sp, recup, 1);
 	else if (str[0] != 'N' && str[0] != 'S' && str[0] != 'W' && str[0] != 'E'
-			&& str[0] != 'R' && str[0] != 'F' && str[0] != 'C'
-			&& str[0] > 65 && str[0] < 122)
+		&& str[0] != 'R' && str[0] != 'F' && str[0] != 'C' && str[0] > 65
+		&& str[0] < 122)
 		recup->erreur = 2;
 	j++;
 }
 
 void	ft_color_resolution(char **str, t_recup *recup)
 {
-	int			i;
+	int	i;
 
 	i = 0;
 	recup->i = 1;
-	if (recup->sizeline > 0 && (recup->no == NULL || recup->so == NULL ||
-				recup->we == NULL || recup->ea == NULL || recup->sp == NULL))
+	if (recup->sizeline > 0 && (recup->no == NULL || recup->so == NULL
+			|| recup->we == NULL || recup->ea == NULL || recup->sp == NULL))
 		recup->erreur = 2;
-	if ((recup->no != NULL || recup->so != NULL || recup->we != NULL ||
-				recup->ea != NULL || recup->sp != NULL) && (recup->rx == 0
-				|| recup->ry == 0))
+	if ((recup->no != NULL || recup->so != NULL || recup->we != NULL
+			|| recup->ea != NULL || recup->sp != NULL) && (recup->rx == 0
+			|| recup->ry == 0))
 		recup->erreur = 2;
 	if (*str[i] == 'R')
 	{

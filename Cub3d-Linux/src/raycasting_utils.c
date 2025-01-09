@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2024/12/03 16:38:23 by smasse           ###   ########.fr       */
+/*   Updated: 2025/01/09 16:01:37 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-//calcule la distance de chaque cote (step et sideDist) en fonction de la direction du rayon
 void	ft_stepsidedist(t_recup *recup)
 {
 	if (recup->ray.raydirx < 0)
 	{
 		recup->ray.stepx = -1;
-		recup->ray.sidedistx = (recup->ray.posx - recup->ray.mapx) \
-							* recup->ray.deltadistx;
+		recup->ray.sidedistx = (recup->ray.posx - recup->ray.mapx)
+			* recup->ray.deltadistx;
 	}
 	else
 	{
@@ -59,7 +58,8 @@ void	ft_incrementray(t_recup *recup)
 			recup->ray.mapy += recup->ray.stepy;
 			recup->ray.side = 1;
 		}
-		if (recup->map[recup->ray.mapx][recup->ray.mapy] == '1' || recup->map[recup->ray.mapx][recup->ray.mapy] == 'P')
+		if (recup->map[recup->ray.mapx][recup->ray.mapy] == '1'
+			|| recup->map[recup->ray.mapx][recup->ray.mapy] == 'P')
 			recup->ray.hit = 1;
 	}
 	ft_drawstartend(recup);
@@ -69,13 +69,13 @@ void	ft_incrementray(t_recup *recup)
 void	ft_drawstartend(t_recup *recup)
 {
 	if (recup->ray.side == 0)
-		recup->ray.perpwalldist = ((double)recup->ray.mapx - \
-				recup->ray.posx + (1 - (double)recup->ray.
-				stepx) / 2) / recup->ray.raydirx;
+		recup->ray.perpwalldist = ((double)recup->ray.mapx
+				- recup->ray.posx + (1
+					- (double)recup->ray.stepx) / 2) / recup->ray.raydirx;
 	else
-		recup->ray.perpwalldist = ((double)recup->ray.mapy - \
-				recup->ray.posy + (1 - (double)recup->ray.
-				stepy) / 2) / recup->ray.raydiry;
+		recup->ray.perpwalldist = ((double)recup->ray.mapy
+				- recup->ray.posy + (1
+					- (double)recup->ray.stepy) / 2) / recup->ray.raydiry;
 	recup->ray.lineheight = (int)(recup->ry / recup->ray.perpwalldist);
 	recup->ray.drawstart = -recup->ray.lineheight / 2 + recup->ry / 2;
 	if (recup->ray.drawstart < 0)
@@ -87,7 +87,7 @@ void	ft_drawstartend(t_recup *recup)
 
 void	ft_swap(t_recup *recup)
 {
-	void *tmp;
+	void	*tmp;
 
 	tmp = recup->data.img;
 	recup->data.img = recup->data.img2;

@@ -6,54 +6,56 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 10:38:41 by ebourdit          #+#    #+#             */
-/*   Updated: 2024/09/24 14:00:21 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/09 14:17:22 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-int		ft_parsing_map(char *fichier, t_recup *recup)
+void	ft_read_map(int fd, t_recup *recup)
 {
-	int			fd;
-	int			ret;
-	char		*str;
+	int		ret;
+	char	*str;
 
 	ret = 1;
 	str = NULL;
-	fd = open(fichier, O_RDONLY);
-	if (!(recup->map = malloc(sizeof(char*) * recup->nblines)))
-		return (0);
 	while (ret != 0)
 	{
 		ret = get_next_line(fd, &str, recup);
-		if (recup->insidemap == 1 && ft_lignevide(str) == 0 &&
-				recup->count < recup->nblines)
+		if (recup->insidemap == 1 && ft_lignevide(str) == 0
+			&& recup->count < recup->nblines)
 			recup->lignevide = 1;
-		if ((recup->insidemap = ft_is_map(str, recup)) == 1)
+		recup->insidemap = ft_is_map(str, recup);
+		if (recup->insidemap == 1)
 		{
 			recup->count++;
 			ft_copy_map(str, recup);
 		}
 		free(str);
 	}
+}
+
+int	ft_parsing_map(char *fichier, t_recup *recup)
+{
+	int	fd;
+
+	fd = open(fichier, O_RDONLY);
+	recup->map = malloc(sizeof(char*) * recup->nblines);
+	if (!recup->map)
+		return (0);
+	ft_read_map(fd, recup);
 	close(fd);
 	ft_init_sprite(recup);
 	return (0);
 }
 
-void	ft_parsing(char *fichier, t_recup *recup)
+void	ft_parse_file(int fd, t_recup *recup)
 {
-	int			fd;
-	int			ret;
-	char		*str;
+	int		ret;
+	char	*str;
 
 	ret = 1;
 	str = NULL;
-	if ((fd = open(fichier, O_DIRECTORY)) != -1)
-		ft_error(recup, "Invalide : is a directory\n");
-	if ((fd = open(fichier, O_RDONLY)) == -1)
-		ft_error(recup, "Fichier .cub invalide\n");
-	recup->erreur = 0;
 	while (ret != 0)
 	{
 		ret = get_next_line(fd, &str, recup);
@@ -64,13 +66,27 @@ void	ft_parsing(char *fichier, t_recup *recup)
 		ft_map(str, recup);
 		free(str);
 	}
+}
+
+void	ft_parsing(char *fichier, t_recup *recup)
+{
+	int	fd;
+
+	fd = open(fichier, O_DIRECTORY);
+	if (fd != -1)
+		ft_error(recup, "Invalide : is a directory\n");
+	fd = open(fichier, O_RDONLY);
+	if (fd == -1)
+		ft_error(recup, "Fichier .cub invalide\n");
+	recup->erreur = 0;
+	ft_parse_file(fd, recup);
 	close(fd);
 	if (recup->sizeline == 0 || recup->nblines == 0)
 		ft_error(recup, "Map absente\n");
 	ft_parsing_map(fichier, recup);
 }
 
-int		ft_cub(char *str, t_recup *recup)
+int	ft_cub(char *str, t_recup *recup)
 {
 	int			i;
 
@@ -93,9 +109,9 @@ int		ft_cub(char *str, t_recup *recup)
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_recup recup;
+	t_recup	recup;
 
 	recup.save = 0;
 	ft_initialisation(&recup);

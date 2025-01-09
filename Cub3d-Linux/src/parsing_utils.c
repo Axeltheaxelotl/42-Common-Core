@@ -1,21 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parsing_utils.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: smasse <smasse@student.42luxembourg.lu>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 12:58:24 by smasse            #+#    #+#             */
-/*   Updated: 2025/01/09 12:58:24 by smasse           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/cub3d.h"
 
-int		ft_strlen2(char *str)
+int	ft_strlen2(char *str)
 {
-	int j;
-	int i;
+	int	j;
+	int	i;
 
 	j = 0;
 	i = 0;
@@ -29,9 +17,9 @@ int		ft_strlen2(char *str)
 	return (j);
 }
 
-int		ft_charinstr(char *str, char c)
+int	ft_charinstr(char *str, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -45,7 +33,7 @@ int		ft_charinstr(char *str, char c)
 	return (0);
 }
 
-int		ft_depart(char c, t_recup *recup, int i, int j)
+int	ft_depart(char c, t_recup *recup, int i, int j)
 {
 	if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
 	{
@@ -59,9 +47,9 @@ int		ft_depart(char c, t_recup *recup, int i, int j)
 	return (0);
 }
 
-int		ft_murs_util(char *str)
+int	ft_murs_util(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
