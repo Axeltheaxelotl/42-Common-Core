@@ -1,4 +1,4 @@
-C 255,20 ,30
+C 153,204,255
 R  2147483647 2147483647
 NO      ./textures/eagle.xpm
 SO ./textures/greystone.xpm
