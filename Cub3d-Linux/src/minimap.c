@@ -1,94 +1,109 @@
 #include "../inc/cub3d.h"
 
-static void draw_square(t_recup *recup, int start_x, int start_y, int end_x,
-	int end_y, int color)
+static void	draw_square(t_recup *recup, t_draw_params *params)
 {
 	int	x;
 	int	y;
 
-	for (y = start_y; y < end_y; y++)
+	y = params->start_y;
+	while (y < params->end_y)
 	{
-		for (x = start_x; x < end_x; x++)
+		x = params->start_x;
+		while (x < params->end_x)
 		{
 			if (x >= 0 && x < recup->rx && y >= 0 && y < recup->ry)
-				recup->data.addr[y * recup->data.line_length / 4 + x] = color;
-        }
-	}
-}
-
-static void draw_player(t_recup *recup, int start_x, int start_y, double scale)
-{
-	int	player_pixel_x;
-	int	player_pixel_y;
-	int	player_size;
-	int	pixel_x;
-	int	pixel_y;
-	int	x;
-	int	y;
-
-	player_pixel_x = start_x + (int)(recup->ray.posy * scale);
-	player_pixel_y = start_y + (int)(recup->ray.posx * scale);
-	player_size = 3;
-	for (y = -player_size; y <= player_size; y++)
-	{
-		for (x = -player_size; x <= player_size; x++)
-		{
-			pixel_x = player_pixel_x + x;
-			pixel_y = player_pixel_y + y;
-			if (pixel_x >= 0 && pixel_x < recup->rx && pixel_y >= 0
-				&& pixel_y < recup->ry)
-				recup->data.addr[pixel_y * recup->data.line_length / 4
-					+ pixel_x] = 0x00FF00;
+				recup->data.addr[y * recup->data.line_length / 4
+					+ x] = params->color;
+			x++;
 		}
+		y++;
 	}
 }
 
-static void draw_map(t_recup *recup, int start_x, int start_y, double scale_x,
-	double scale_y)
+void	draw_player(t_recup *recup, t_player_params *params)
 {
-	int	map_x;
-	int	map_y;
-	int	color;
-	int	pixel_x_start;
-	int	pixel_y_start;
-	int	pixel_x_end;
-	int	pixel_y_end;
+	t_player_draw_params	draw_params;
 
-	for (map_y = 0; map_y < recup->nblines; map_y++)
+	draw_params.player_pixel_x = params->start_x
+		+ (int)(recup->ray.posy * params->scale);
+	draw_params.player_pixel_y = params->start_y
+		+ (int)(recup->ray.posx * params->scale);
+	draw_params.player_size = 3;
+	draw_params.y = -draw_params.player_size;
+	while (draw_params.y <= draw_params.player_size)
 	{
-		for (map_x = 0; map_x < recup->sizeline; map_x++)
+		draw_params.x = -draw_params.player_size;
+		while (draw_params.x <= draw_params.player_size)
 		{
-			if (recup->map[map_y][map_x] == '1')
-				color = 0xF2FF00;
-			else if (recup->map[map_y][map_x] == '0')
-				color = 0x000000;
-			else
-				color = 0xFF0000;
-			pixel_x_start = start_x + (int)(map_x * scale_x);
-			pixel_y_start = start_y + (int)(map_y * scale_y);
-			pixel_x_end = start_x + (int)((map_x + 1) * scale_x);
-			pixel_y_end = start_y + (int)((map_y + 1) * scale_y);
-			draw_square(recup, pixel_x_start, pixel_y_start, pixel_x_end,
-				pixel_y_end, color);
+			draw_params.pixel_x = draw_params.player_pixel_x + draw_params.x;
+			draw_params.pixel_y = draw_params.player_pixel_y + draw_params.y;
+			if (draw_params.pixel_x >= 0 && draw_params.pixel_x
+				< recup->rx && draw_params.pixel_y >= 0
+				&& draw_params.pixel_y < recup->ry)
+				recup->data.addr[draw_params.pixel_y
+					* recup->data.line_length / 4
+					+ draw_params.pixel_x] = 0x00FF00;
+			draw_params.x++;
 		}
+		draw_params.y++;
 	}
 }
 
-void draw_minimap(t_recup *recup)
+void	set_draw_params(t_map_draw_params *map_draw_params
+		, t_map_params *params)
 {
-	int start_x;
-	int start_y;
-	int minimap_width;
-	int minimap_height;
-	double scale_x;
-	double scale_y;
+	map_draw_params->draw_params.start_x = params->start_x
+		+ (int)(map_draw_params->map_x * params->scale_x);
+	map_draw_params->draw_params.start_y = params->start_y
+		+ (int)(map_draw_params->map_y * params->scale_y);
+	map_draw_params->draw_params.end_x = params->start_x
+		+ (int)((map_draw_params->map_x + 1) * params->scale_x);
+	map_draw_params->draw_params.end_y = params->start_y
+		+ (int)((map_draw_params->map_y + 1) * params->scale_y);
+}
 
-	start_x = 10;
-	start_y = 10;
-	minimap_width = 200;
-	minimap_height = 200;
-	scale_x = (double)minimap_width / recup->sizeline;
-	scale_y = (double)minimap_height / recup->nblines;
-	draw_map(recup, start_x, start_y, scale_x, scale_y);
-	draw_player(recup, start_x, start_y, scale_x);
+static void	set_color(t_map_draw_params *map_draw_params, t_recup *recup)
+{
+	if (recup->map[map_draw_params->map_y][map_draw_params->map_x] == '1')
+		map_draw_params->color = 0xF2FF00;
+	else if (recup->map[map_draw_params->map_y][map_draw_params->map_x] == '0')
+		map_draw_params->color = 0x000000;
+	else
+		map_draw_params->color = 0xFF0000;
+	map_draw_params->draw_params.color = map_draw_params->color;
+}
+
+void	draw_map(t_recup *recup, t_map_params *params)
+{
+	t_map_draw_params	map_draw_params;
+
+	map_draw_params.map_y = 0;
+	while (map_draw_params.map_y < recup->nblines)
+	{
+		map_draw_params.map_x = 0;
+		while (map_draw_params.map_x < recup->sizeline)
+		{
+			set_color(&map_draw_params, recup);
+			set_draw_params(&map_draw_params, params);
+			draw_square(recup, &map_draw_params.draw_params);
+			map_draw_params.map_x++;
+		}
+		map_draw_params.map_y++;
+	}
+}
+
+void	draw_minimap(t_recup *recup)
+{
+	t_map_params	map_params;
+	t_player_params	player_params;
+
+	map_params.start_x = 10;
+	map_params.start_y = 10;
+	map_params.scale_x = 200.0 / recup->sizeline;
+	map_params.scale_y = 200.0 / recup->nblines;
+	player_params.start_x = 10;
+	player_params.start_y = 10;
+	player_params.scale = 200.0 / recup->sizeline;
+	draw_map(recup, &map_params);
+	draw_player(recup, &player_params);
 }
