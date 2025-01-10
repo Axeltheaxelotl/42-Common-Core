@@ -1,10 +1,9 @@
-C 153,204,255
-R  2147483647 2147483647
-NO      ./textures/eagle.xpm
-SO ./textures/greystone.xpm
-EA ./textures/red.xpm
-WE ./textures/purplestone.xpm
+NO  ./textures/eagle.xpm
+SO  ./textures/greystone.xpm
+EA  ./textures/red.xpm
+WE  ./textures/purplestone.xpm
 
+C 153,204,255
 S ./textures/tonneau.xpm
 F  000, 000, 00
 

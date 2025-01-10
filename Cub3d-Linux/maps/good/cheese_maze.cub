@@ -1,13 +1,11 @@
-R  2147483647 2147483647
-
 NO ./textures/simonkraft/wet_sponge.xpm
 SO ./textures/simonkraft/wet_sponge.xpm
 WE ./textures/simonkraft/wet_sponge.xpm
 EA ./textures/simonkraft/wet_sponge.xpm
 
 S ./textures/simonkraft/wet_sponge.xpm
-F 000, 000, 00
-C 153,204,255
+F 000, 000, 000
+C 000,000,000
 
 111111111111111111111
 101000001000000000001

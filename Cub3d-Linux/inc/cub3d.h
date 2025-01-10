@@ -6,7 +6,7 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:30:27 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/09 20:52:53 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/10 10:02:47 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@
 # define RIGHT_D_D 100
 # define LEFT_A_Q 97
 # define BUFFER_SIZE 4096
-# define R 2147483647 2147483647
-// Ajuste la taille et l'échelle pour agrandir davantage la mini-carte
+
+# define RES_X 2147483647
+# define RES_Y 2147483647
 
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
