@@ -1,0 +1,22 @@
+//COMMANDE GENERAL
+
+docker ps or docker ps -a
+docker pull "NAME OF THE IMAGE"
+docker "THREE FIRST LETTER OF YOU DOCKER"
+docker rm $(docker ps -a -q)
+docker exec -it "THREE FIRST LETTER OF YOU DOCKER" sh
+
+//DOCKER RUN
+
+docker run "NAME OF THE DOCKER IMAGE"
+docker run -d
+docker run -p
+docker run -P
+docker run -it "IMAGE NAME"
+docker run -name sl mysql
+docker run -d -p 7000:80 test:latest
+
+//DOCKER IMAGE
+
+docker image rm -f "IMAGE NAME/ID"
+docker image kill "NAME"
