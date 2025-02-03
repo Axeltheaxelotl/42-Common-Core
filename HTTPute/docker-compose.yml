@@ -1,0 +1,22 @@
+services:
+  nginx:
+    build: 
+      context: ./requirement/nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - wordpress
+    volumes:
+      - wordpress_data:/var/www/html
+
+  wordpress:
+    build: 
+      context: ./requirement/wordpress
+    container_name: wp_php
+    volumes:
+      - wordpress_data:/var/www/html
+
+volumes:
+  wordpress_data:
+
