@@ -8,15 +8,19 @@ services:
     depends_on:
       - wordpress
     volumes:
-      - wordpress_data:/var/www/html
+      - ./web:/var/www/html
 
   wordpress:
     build: 
       context: ./requirement/wordpress
     container_name: wp_php
     volumes:
-      - wordpress_data:/var/www/html
+      - ./web:/var/www/html
+
+  mariadb:
+    build: ./requirement/mariadb
+    container_name: mariadb
 
 volumes:
+  web:
   wordpress_data:
-
