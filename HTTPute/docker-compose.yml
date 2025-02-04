@@ -9,6 +9,8 @@ services:
       - wordpress
     volumes:
       - ./web:/var/www/html
+    networks:
+      inception:
 
   wordpress:
     build: 
@@ -16,11 +18,28 @@ services:
     container_name: wp_php
     volumes:
       - ./web:/var/www/html
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    networks:
+      inception:
 
   mariadb:
     build: ./requirement/mariadb
     container_name: mariadb
+    volumes:
+      - ./database:/var/lib/mysql
+    networks:
+      inception:
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   web:
   wordpress_data:
+
+networks:
+  inception:

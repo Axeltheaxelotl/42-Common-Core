@@ -1,4 +1,4 @@
-CREATE DATABASE WordFumer;
-CREATE USER 'wpuser'@'%' IDENTIFIED BY 'mot_de_passe';
+CREATE DATABASE IF NOT EXISTS WordFumer;
+CREATE USER IF NOT EXISTS 'wpuser'@'%' IDENTIFIED BY 'mot_de_passe';
 GRANT ALL PRIVILEGES ON WordFumer.* TO 'wpuser'@'%';
 FLUSH PRIVILEGES;
