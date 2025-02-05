@@ -1,37 +1,52 @@
 services:
   nginx:
-    build: 
+    build:
       context: ./requirement/nginx
     container_name: nginx
     ports:
-      - "80:80"
       - "443:443"
+    restart: always
     depends_on:
       - wordpress
     volumes:
-      - ./web:/var/www/html
+      - /home/alanty/data/wordpress:/var/www/html
     networks:
-      inception:
+      - inception
 
   wordpress:
-    build: 
+    build:
       context: ./requirement/wordpress
     container_name: wp_php
+    environment:
+      - DOMAIN_NAME=${DOMAIN_NAME}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - WP_ADMIN_USER=${WP_ADMIN_USER}
+      - WP_ADMIN_PASSWORD=${WP_ADMIN_PASSWORD}
+      - WP_ADMIN_EMAIL=${WP_ADMIN_EMAIL}
+    restart: always
     volumes:
-      - ./web:/var/www/html
+      - /home/alanty/data/wordpress:/var/www/html
     depends_on:
-      mariadb:
-        condition: service_healthy
+      - mariadb
     networks:
-      inception:
+      - inception
 
   mariadb:
-    build: ./requirement/mariadb
+    build:
+      context: ./requirement/mariadb
     container_name: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    restart: always
     volumes:
-      - ./database:/var/lib/mysql
+      - /home/alanty/data/database:/var/lib/mysql
     networks:
-      inception:
+      - inception
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
@@ -39,7 +54,6 @@ services:
       retries: 5
 
 volumes:
-  web:
   wordpress_data:
 
 networks:
