@@ -1,4 +1,5 @@
 # 42 Common Core
+Tous les soirs je pense a Sam et à sa cousine
 
 ## Introduction
 oui
