@@ -19,20 +19,17 @@
 # Default server configuration
 #
 server {
-    listen 443 ssl;
-    server_name alanty.42.fr;
-
-    ssl_certificate /etc/nginx/ssl/nginx.crt;
-    ssl_certificate_key /etc/nginx/ssl/nginx.key;
-
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_prefer_server_ciphers on;
+    listen 80 default_server;
+    listen [::]:80 default_server;
 
     root /var/www/html;
+
     index index.php index.html index.htm index.nginx-debian.html;
 
+    server_name _;
+
     location / {
-        try_files $uri $uri/ /index.php?$args;
+        try_files $uri $uri/ =404;
     }
 
     location ~ \.php$ {
@@ -40,6 +37,8 @@ server {
         fastcgi_pass wp_php:9000;
     }
 }
+
+
 # Virtual Host configuration for example.com
 #
 # You can move that to a different file under sites-available/ and symlink that
@@ -58,4 +57,3 @@ server {
 #		try_files $uri $uri/ =404;
 #	}
 #}
-
