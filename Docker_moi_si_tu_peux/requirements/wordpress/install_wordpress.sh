@@ -18,4 +18,10 @@ else
     echo "WordPress is already installed."
 fi
 
+# Ensure wp-cli.phar is present
+if [ ! -f wp-cli.phar ]; then
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    chmod +x wp-cli.phar
+fi
+
 php-fpm7.4 -F
