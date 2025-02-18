@@ -5,7 +5,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - ./web:/var/www/html
+      - ./data/wp_data:/var/www/html
       - ./requirements/nginx/certs:/etc/nginx/certs
     environment:
       - DOMAIN_NAME=${DOMAIN_NAME}
@@ -17,7 +17,7 @@ services:
     build: requirements/wordpress
     container_name: wp_php
     volumes:
-      - ./web:/var/www/html
+      - ./data/wp_data:/var/www/html
     environment:
       - WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST}
       - WORDPRESS_DB_USER=${WORDPRESS_DB_USER}

@@ -49,16 +49,15 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',          '(O)Y<{SPPgh1E&#FnjbJ;w#RV^|^PAcD5:ToLcW2+c//*e-B10GSF,@u&5j@C0E$' );
-define( 'SECURE_AUTH_KEY',   'A *|Ut91%NjYT#4^ebg$1k7W)Zt1k|O6b`<$%$jPYKBIK{aryc/)`i@e.P1F*TL0' );
-define( 'LOGGED_IN_KEY',     'AA6 AA eTU1eY`S!jl5u434.tZW#I6Zg>*:JgN9_i8..uNQju#t^^@z]8I[9Clj4' );
-define( 'NONCE_KEY',         '>(]B:bo.Z&zu~6i@Gv}~`GS7~R6?:SfcxN:}9V8EFMT^mT}q-}AgV!-7z.jvieE(' );
-define( 'AUTH_SALT',         'BLC2,w-!]5Qgi4yK!l1XSY%BfHJdt|pD[~P@{|vDfg|(k@)]8TgRqT6{/], XmoX' );
-define( 'SECURE_AUTH_SALT',  '!5Dbh&m5 Q= v4`Da LV85Hgp=BzKesG^T~_U*F]y]6|b5-;8Khp$^D(VX[YtqQb' );
-define( 'LOGGED_IN_SALT',    '`SufpX^m.6WSuY%N%K0d+qlD/WF.htax![[ TU^A1-@L@zlX_; 3ft!c&_ZK,DHw' );
-define( 'NONCE_SALT',        'vIimgwleQ8qznwG]R:Gq!^v-]q,eF,%~ovJ}S@hEUGaz*mPX)y|K%+M7=|bHWV}Q' );
-define( 'WP_CACHE_KEY_SALT', 'EU!~A=pllbh0};Yh1jt@4x:k1@89Eg/;*@ -s%U[C;-rh#M/]8QajyzrlzGDaY5h' );
-
+define( 'AUTH_KEY',          '>*40F?qHqxZ.M[6t @4-GZ1khvnKwFM_3y7AZLSBD96se7Q$Q4CKb.,+2?:99,p;' );
+define( 'SECURE_AUTH_KEY',   'uQoUAd|ubKr4cx})pNrK14_0;voJ-|^x]{.e5SB^ZZBqyej@F.,,tLKYnEah.mk=' );
+define( 'LOGGED_IN_KEY',     'O.*m_4kMU,iJg/;35rkycv&eDGQkv`9e$OPrTQPzFJb?ehZ)&ZJzGb@{#A KLMkj' );
+define( 'NONCE_KEY',         '$%*US9.-N^2%}+&`^dIU`xFdPqCCc]%)p4e(Z-(sW.AvB}hiAjV_f92mD9uZ0.5*' );
+define( 'AUTH_SALT',         'NuLoGCjJN1TiI..tnr0P{ek|JO0bA(K{1|8Z|u[X~dZn;{xGK+9U)4mHj4.`Uz5#' );
+define( 'SECURE_AUTH_SALT',  'I7,#D9BIPu8e!gDs%F99i=j5x]d?xJe-e@;^_&uT4ljU7YI5=U4s3SqS[!{uurm)' );
+define( 'LOGGED_IN_SALT',    'LlR!sw/Rw,AeeH-vNv|o(1bro_lYOF lyg*8s}ns</iU4aK_#;gTix{q)EEurKIO' );
+define( 'NONCE_SALT',        'v0xnCI7p(zq(wEB0h<:sVy,rIe8`A98tZ%,TgB:-7AKNuL!g+P4 )y>PqfYM|~o1' );
+define( 'WP_CACHE_KEY_SALT', '/pH`aN?(DJX/Xz,cYrJVf g`4;$!Doh<)_Pns9|zMTc6 aD7YF7wv??Au.=s~IU{' );
 
 /**#@-*/
 
@@ -70,10 +69,9 @@ define( 'WP_CACHE_KEY_SALT', 'EU!~A=pllbh0};Yh1jt@4x:k1@89Eg/;*@ -s%U[C;-rh#M/]8
  */
 $table_prefix = 'wp_';
 
-
 /* Add any custom values between this line and the "stop editing" line. */
-
-
+define('WP_HOME', 'https://alanty.42.fr');
+define('WP_SITEURL', 'https://alanty.42.fr');
 
 /**
  * For developers: WordPress debugging mode.
@@ -88,14 +86,14 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 if ( ! defined( 'WP_DEBUG' ) ) {
-	define( 'WP_DEBUG', false );
+    define( 'WP_DEBUG', false );
 }
 
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+    define( 'ABSPATH', __DIR__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
