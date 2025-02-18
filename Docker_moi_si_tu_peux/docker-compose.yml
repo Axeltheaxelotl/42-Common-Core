@@ -1,0 +1,48 @@
+services:
+  nginx:
+    build: requirements/nginx
+    container_name: nginx
+    ports:
+      - "443:443"
+    volumes:
+      - ./web:/var/www/html
+      - ./requirements/nginx/certs:/etc/nginx/certs
+    environment:
+      - DOMAIN_NAME=${DOMAIN_NAME}
+    networks:
+      - wp_network
+    restart: always
+
+  wordpress:
+    build: requirements/wordpress
+    container_name: wp_php
+    volumes:
+      - ./web:/var/www/html
+    environment:
+      - WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST}
+      - WORDPRESS_DB_USER=${WORDPRESS_DB_USER}
+      - WORDPRESS_DB_PASSWORD=${WORDPRESS_DB_PASSWORD}
+      - WORDPRESS_DB_NAME=${WORDPRESS_DB_NAME}
+    networks:
+      - wp_network
+    restart: always
+
+  mariadb:
+    build: requirements/mariadb
+    container_name: mariadb
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    networks:
+      - wp_network
+    restart: always
+
+volumes:
+  db_data:
+
+networks:
+  wp_network:
