@@ -13,7 +13,7 @@ if [ ! -f wp-config.php ]; then
     chmod +x wp-cli.phar
     ./wp-cli.phar core download --allow-root
     ./wp-cli.phar config create --dbname=${WORDPRESS_DB_NAME} --dbuser=${WORDPRESS_DB_USER} --dbpass=${WORDPRESS_DB_PASSWORD} --dbhost=${WORDPRESS_DB_HOST} --allow-root
-    ./wp-cli.phar core install --url=${DOMAIN_NAME} --title=inception --admin_user=admin_user --admin_password=admin_password --admin_email=admin@admin.com --allow-root
+    ./wp-cli.phar core install --url=${DOMAIN_NAME} --title=inception --admin_user=${ADMIN_USER} --admin_password=${ADMIN_PASSWORD} --admin_email=${ADMIN_EMAIL} --allow-root
 else
     echo "WordPress is already installed."
 fi
