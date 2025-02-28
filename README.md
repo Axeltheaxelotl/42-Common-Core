@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://via.placeholder.com/800x400?text=Sam+et+sa+cousine" alt="Sam et sa cousine">
+  <img src="https://i.pinimg.com/736x/8e/d2/43/8ed24360c3e14e1c2d01b5640799fc52.jpg" alt="Sam et sa cousine">
 </p>
 
 <h1 align="center" style="font-family: 'Arial', sans-serif; font-size: 2.5em; color: #333;">
