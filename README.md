@@ -1,9 +1,6 @@
-<div align="center" style="font-family: 'Courier New', monospace; font-size: 3em">
-  <h2>42 Incest</h2>
-</div>
-
-<p align="center">
-  <img src="https://i.pinimg.com/236x/f0/47/a0/f047a0138e7a8cd8011a0a0dd85aae88.jpg" alt="Sam et sa cousine" style="width:900px;">
+<p>
+  <img src="https://img.shields.io/github/commit-activity/m/Axeltheaxelotl/42-Common-Core?color=FF0000&label=Commits%20par%20mois" alt="Commits par mois"/>
+  <img src="https://img.shields.io/github/last-commit/Axeltheaxelotl/42-Common-Core?color=FF0000&label=Dernier%20commit" alt="Dernier commit"/>
 </p>
 
 ## Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
@@ -11,7 +8,6 @@
 <p align="center">
   <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" alt="Sam et sa cousine" style="width:500px;">
 </p>
-
 
 
 ## Programme
@@ -25,7 +21,27 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 
 ## Contact
 <p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine, elle s'occupera de vous comme il faut...</p>
-<img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" style="width:300px; margin-left:5px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+  <!-- Image à gauche -->
+  <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" style="width:300px; margin-right: 20px;"/>
+
+  <!-- Contenu aligné à droite -->
+  <div style="text-align: center;">
+    <p>
+      <img src="https://github-readme-stats.vercel.app/api?username=Axeltheaxelotl&show_icons=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0d1117&count_private=true" alt="Statistiques GitHub" width="48%"/>
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Axeltheaxelotl&theme=neon-red&hide_border=true&ring=FF0000&fire=FF0000" alt="Streak GitHub" width="48%"/>
+    </p>
+<p>
+</p>
+    <p>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Axeltheaxelotl&langs_count=8&layout=compact&title_color=FF0000&text_color=ffffff&bg_color=0d1117" alt="Langages les plus utilisés" width="50%"/>
+    </p>
+<p>
+  </div>
+</div>
+
+<h1>
+</h1>
 
 <br>
 
