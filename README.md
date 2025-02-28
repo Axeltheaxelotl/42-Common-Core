@@ -26,21 +26,14 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 <p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine de Sam, elle s'occupera de vous comme il faut...</p>
 <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" style="width:300px; margin-left:5px;">
 
-<p align="left" style="font-family: 'Courier New', monospace; font-size: 2em; color: #333;">
-  ENQUETE 
-</p>
-<p align="left" style="font-family: 'Courier New', monospace; font-size: 2em; color: #333;">
-    COUSIN GERMANS: L'ANGLE
-</p>
-<p align="left" style="font-family: 'Courier New', monospace; font-size: 2em; color: #333;">
-  MORT DE LA LUTTE CONTRE
-</p>
-<p align="left" style="font-family: 'Courier New', monospace; font-size: 2em; color: #333;">
-    L'INCEST
-</p>
+<br>
 
-<h1>
-</h1>
+<p align="left" style="font-family: 'Courier New', monospace; font-size: 1.9em; color: #333;">
+  ENQUETE <br>
+  COUSIN GERMANS: L'ANGLE <br>
+  MORT DE LA LUTTE CONTRE <br>
+  L'INCEST
+</p>
 
 <p align="center" style="font-family: 'Courier New', monospace; font-size: 1.3em; color: #333;">
   Trop souvent considérées comme des épisodes de «touche-pipi» et d’exploration, les violences sexuelles d’un cousin sur un autre sont aussi méconnues que taboues. Un phénomène d’ampleur auquel la Ciivise veut s’attaquer
