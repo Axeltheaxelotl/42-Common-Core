@@ -23,18 +23,18 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 <p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine, elle s'occupera de vous comme il faut...</p>
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
   <!-- Image à gauche -->
-  <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" style="width:300px; margin-right: 20px;"/>
+  <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" style="width:200px; margin-right: 20px;"/>
 
   <!-- Contenu aligné à droite -->
   <div style="text-align: center;">
     <p>
-      <img src="https://github-readme-stats.vercel.app/api?username=Axeltheaxelotl&show_icons=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0d1117&count_private=true" alt="Statistiques GitHub" width="48%"/>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Axeltheaxelotl&theme=neon-red&hide_border=true&ring=FF0000&fire=FF0000" alt="Streak GitHub" width="48%"/>
+      <img src="https://github-readme-stats.vercel.app/api?username=Axeltheaxelotl&show_icons=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0d1117&count_private=true" alt="Statistiques GitHub" width="20%"/>
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Axeltheaxelotl&theme=neon-red&hide_border=true&ring=FF0000&fire=FF0000" alt="Streak GitHub" width="20%"/>
     </p>
 <p>
 </p>
     <p>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Axeltheaxelotl&langs_count=8&layout=compact&title_color=FF0000&text_color=ffffff&bg_color=0d1117" alt="Langages les plus utilisés" width="50%"/>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Axeltheaxelotl&langs_count=8&layout=compact&title_color=FF0000&text_color=ffffff&bg_color=0d1117" alt="Langages les plus utilisés" width="20%"/>
     </p>
 <p>
   </div>
