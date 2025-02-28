@@ -1,16 +1,18 @@
 # 42 Common Core
-Tous les soirs je pense a Sam et à sa cousine
+![Sam et sa cousine](https://via.placeholder.com/800x400?text=Sam+et+sa+cousine)
 
 ## Introduction
-oui
+Bienvenue dans le projet 42 Common Core. Ce projet est dédié à Sam et à sa cousine.
 
 ## Programme
-
-J ENCULE MOI LES MINEURS gestion de projet.
+Le programme inclut la gestion de projet et d'autres activités passionnantes.
 
 ## Ressources
-- GOOGLE
-- 42 Luxembourg
+- ChatGPT
+- Copilot
+- Sam core
 
 ## Contact
-Pour plus d'informations, veuillez contacter la cousine a sam
+Pour plus d'informations, veuillez contacter la cousine de Sam.
+
+![Contact](https://via.placeholder.com/400x200?text=Contact+Sam+et+sa+cousine)
