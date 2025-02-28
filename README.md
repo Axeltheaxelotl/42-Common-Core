@@ -1,9 +1,9 @@
-<h1 align="center" style="font-family: 'Creepster', cursive; font-size: 4em; color: rgb(255, 0, 0);">
+<h1 align="center" style="font-family: 'Courier New', monospace; font-size: 4em; color: #333;">
   42 Common Core
 </h1>
 
-<p align="center" style="border: 5px solid #FF5733; padding: 10px; display: inline-block; animation: pulse 2s infinite, rotate 10s infinite;">
-  <img src="https://i.pinimg.com/736x/7e/d4/1c/7ed41ca3a61e20b7a0ab4290b7ba9baf.jpg" alt="Sam et sa cousine" style="width: 80%; height: auto;">
+<p align="center">
+  <img src="https://i.pinimg.com/originals/c2/55/2a/c2552a95983aa61b54dd7b40446f2be5.gif" alt="Sam et sa cousine">
 </p>
 
 ## Introduction
@@ -20,32 +20,6 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 ## Contact
 Pour plus d'informations, veuillez contacter la cousine de Sam.
 
-<p align="center" style="border: 5px solid #FF5733; padding: 10px; display: inline-block; animation: pulse 2s infinite, rotate 10s infinite;">
-  <img src="https://via.placeholder.com/400x200?text=Contact+Sam+et+sa+cousine" alt="Contact" style="width: 80%; height: auto;">
+<p align="left">
+  <img src="https://i.pinimg.com/originals/86/58/0a/86580ace11491397d80ac889bc027e4e.gif">
 </p>
-
-<style>
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-</style>
