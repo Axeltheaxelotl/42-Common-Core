@@ -26,18 +26,14 @@
   <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" alt="Sam et sa cousine" style="width:900px; height:700px;">
 </p>
 
-<div style="text-align: right;">
-  <p>
-     <img src="https://github-readme-stats.vercel.app/api?username=Axeltheaxelotl&show_icons=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0d1117&count_private=true" alt="Statistiques GitHub" width="40%"/>
-     <img src="https://github-readme-streak-stats.herokuapp.com/?user=Axeltheaxelotl&theme=neon-red&hide_border=true&ring=FF0000&fire=FF0000" alt="Streak GitHub" width="40%"/>
-  </p>
-</div>
-  
-<div style="text-align: right;">
-  <p>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Axeltheaxelotl&langs_count=8&layout=compact&title_color=FF0000&text_color=ffffff&bg_color=0d1117" alt="Langages les plus utilisés" width="50%"/>
-  </p>
-</div>
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Axeltheaxelotl&theme=github_dark" alt="Résumé du profil" width="80%"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Axeltheaxelotl&repo=42-Common-Core&title_color=FF0000&text_color=ffffff&bg_color=0d1117" alt="Dépôt épinglé" width="48%"/>
+  <img src="https://github-readme-activity-graph.cyclic.app/graph?username=Axeltheaxelotl&theme=github-dark&color=FF0000&line=FF0000&point=ffffff&area=true&hide_border=true" alt="Graphique d'activité" width="48%"/>
+</p>
 
 
 <h1>
