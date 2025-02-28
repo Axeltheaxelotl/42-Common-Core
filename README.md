@@ -7,7 +7,10 @@
 </p>
 
 ## Introduction
-Bienvenue dans le projet 42 Common Core. Ce projet est dédié à Sam et à sa cousine.
+<p style="display:inline-flex; align-items:center; font-size:18px;">
+  <span>Bienvenue dans le projet 42 Common Core. Ce projet est dédié à Sam et à sa cousine.</span>
+  <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" style="width:100px; margin-left:5px;">
+</p>
 
 ## Programme
 Le programme inclut la gestion de projet et d'autres activités passionnantes.
