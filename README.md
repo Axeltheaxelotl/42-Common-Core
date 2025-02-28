@@ -1,12 +1,12 @@
-<h1 align="center" style="font-family: 'Courier New', monospace; font-size: 6em; color: #333;">
+<p align="center" style="font-family: 'Courier New', monospace; font-size: 4em; color: #333;">
   42 Incest
-</h1>
-
-<p align="center">
-  <img src="https://i.pinimg.com/736x/d7/99/b0/d799b06d82a7673588721cea1ec16bb8.jpg" alt="Sam et sa cousine" style="width:1000px;">
 </p>
 
-<p align="center" style="font-family: 'Courier New', monospace; font-size: 4em; color: #333; border: 2px solid #333; padding: 20px;">
+<p align="center">
+  <img src="https://i.pinimg.com/236x/f0/47/a0/f047a0138e7a8cd8011a0a0dd85aae88.jpg" alt="Sam et sa cousine" style="width:900px;">
+</p>
+
+<p align="center" style="font-family: 'Courier New', monospace; font-size: 3em; color: #333; border: 2px solid #333; padding: 20px;">
   Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
 </p>
 
