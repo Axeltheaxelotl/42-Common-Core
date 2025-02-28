@@ -1,4 +1,4 @@
-<div align="center" style="font-family: 'Courier New', monospace; font-size: 2.5em">
+<div align="center" style="font-family: 'Courier New', monospace; font-size: 3em">
   <h2>42 Incest</h2>
 </div>
 
