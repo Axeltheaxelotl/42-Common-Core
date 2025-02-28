@@ -3,7 +3,9 @@
   <img src="https://img.shields.io/github/last-commit/Axeltheaxelotl/42-Common-Core?color=FF0000&label=Dernier%20commit" alt="Dernier commit"/>
 </p>
 
-## Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
+<p align="center" style="font-family: 'Courier New', monospace; font-size: 1.7em; color: #333; border: 2px solid #333; padding: 20px;">
+  Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
+</p>
 
 <p align="center">
   <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" alt="Sam et sa cousine" style="width:1000px; height:300px;">
@@ -39,7 +41,6 @@
 <h1>
 </h1>
     
-
 
 <br>
 
