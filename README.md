@@ -1,4 +1,3 @@
-# 42 Common Core
 <p align="center">
   <img src="https://via.placeholder.com/800x400?text=Sam+et+sa+cousine" alt="Sam et sa cousine">
 </p>
