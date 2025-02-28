@@ -6,8 +6,8 @@
 
 ## Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
 
-<p align="left">
-  <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" alt="Sam et sa cousine" style="width:1000px;">
+<p align="center">
+  <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" alt="Sam et sa cousine" style="width:500px;">
 </p>
 
 
