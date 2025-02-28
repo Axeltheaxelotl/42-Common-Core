@@ -3,19 +3,11 @@
   <img src="https://img.shields.io/github/last-commit/Axeltheaxelotl/42-Common-Core?color=FF0000&label=Dernier%20commit" alt="Dernier commit"/>
 </p>
 
-<p align="center">
-  <img src="https://i.pinimg.com/736x/af/07/12/af0712185c79f029896d6333bdeabbaa.jpg" alt="Sam et sa cousine" style="width:500px;">
-</p>
-
 ## Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
 
 <p align="center">
   <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" alt="Sam et sa cousine" style="width:500px;">
 </p>
-
-
-## Programme
-Le programme inclut la gestion de projet et d'autres activités passionnantes.
 
 ## Ressources
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-white.svg?style=for-the-badge&logo=ChatGPT&logoColor=black)
@@ -27,13 +19,13 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 <p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine, elle s'occupera de vous comme il faut...</p>
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
   <!-- Image à gauche -->
-  <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" style="width:350px; margin-right: 20px;"/>
+  <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" style="width:300px; margin-right: 20px;"/>
 
   <!-- Contenu aligné à droite -->
   <div style="text-align: center;">
     <p>
-      <img src="https://github-readme-stats.vercel.app/api?username=Axeltheaxelotl&show_icons=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0d1117&count_private=true" alt="Statistiques GitHub" width="50%"/>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Axeltheaxelotl&theme=neon-red&hide_border=true&ring=FF0000&fire=FF0000" alt="Streak GitHub" width="50%"/>
+      <img src="https://github-readme-stats.vercel.app/api?username=Axeltheaxelotl&show_icons=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0d1117&count_private=true" alt="Statistiques GitHub" width="48%"/>
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Axeltheaxelotl&theme=neon-red&hide_border=true&ring=FF0000&fire=FF0000" alt="Streak GitHub" width="48%"/>
     </p>
 <p>
 </p>
@@ -46,6 +38,8 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 
 <h1>
 </h1>
+    
+
 
 <br>
 
