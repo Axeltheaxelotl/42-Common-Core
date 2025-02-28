@@ -1,4 +1,6 @@
-## 42 Incest
+<div align="center" style="font-family: 'Courier New', monospace; font-size: 2.5em">
+  <h2>42 Incest</h2>
+</div>
 
 <p align="center">
   <img src="https://i.pinimg.com/236x/f0/47/a0/f047a0138e7a8cd8011a0a0dd85aae88.jpg" alt="Sam et sa cousine" style="width:900px;">
