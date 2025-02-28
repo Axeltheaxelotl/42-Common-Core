@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://i.pinimg.com/originals/c2/55/2a/c2552a95983aa61b54dd7b40446f2be5.gif" alt="Sam et sa cousine">
+  <img src="https://i.pinimg.com/originals/db/e3/5b/dbe35b71854b341f5bf33c50dd8561e8.gif" alt="Sam et sa cousine" style="width:1000px;">
 </p>
 
 ## Introduction
@@ -21,5 +21,5 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 Pour plus d'informations, veuillez contacter la cousine de Sam.
 
 <p align="left">
-  <img src="https://i.pinimg.com/originals/86/58/0a/86580ace11491397d80ac889bc027e4e.gif">
+  <img src="https://i.pinimg.com/originals/86/58/0a/86580ace11491397d80ac889bc027e4e.gif" style="width:600px;">
 </p>
