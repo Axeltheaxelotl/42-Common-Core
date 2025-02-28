@@ -6,7 +6,7 @@
 ## Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
 
 <p align="center">
-  <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" alt="Sam et sa cousine" style="width:500px;">
+  <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" alt="Sam et sa cousine" style="width:1000px; height:300px;">
 </p>
 
 ## Ressources
@@ -27,8 +27,6 @@
       <img src="https://github-readme-stats.vercel.app/api?username=Axeltheaxelotl&show_icons=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0d1117&count_private=true" alt="Statistiques GitHub" width="40%"/>
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=Axeltheaxelotl&theme=neon-red&hide_border=true&ring=FF0000&fire=FF0000" alt="Streak GitHub" width="40%"/>
     </p>
-<p>
-</p>
     <p>
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Axeltheaxelotl&langs_count=8&layout=compact&title_color=FF0000&text_color=ffffff&bg_color=0d1117" alt="Langages les plus utilisés" width="50%"/>
     </p>
