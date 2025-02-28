@@ -1,4 +1,4 @@
-<h1 align="center" style="font-family: 'Courier New', monospace; font-size: 4em; color: #333;">
+<h1 align="center" style="font-family: 'Courier New', monospace; font-size: 6em; color: #333;">
   42 Incest
 </h1>
 
@@ -6,7 +6,7 @@
   <img src="https://i.pinimg.com/736x/d7/99/b0/d799b06d82a7673588721cea1ec16bb8.jpg" alt="Sam et sa cousine" style="width:1000px;">
 </p>
 
-<p align="center" style="font-family: 'Courier New', monospace; font-size: 1.3em; color: #333; border: 2px solid #333; padding: 20px;">
+<p align="center" style="font-family: 'Courier New', monospace; font-size: 4em; color: #333; border: 2px solid #333; padding: 20px;">
   Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
 </p>
 
@@ -20,12 +20,9 @@
 Le programme inclut la gestion de projet et d'autres activités passionnantes.
 
 ## Ressources
-- ChatGPT
-- Copilot
-- Github
-- Sam core
-
-
+![ChatGPT](https://img.shields.io/badge/ChatGPT-blue.svg?style=for-the-badge&logo=ChatGPT&logoColor=white)
+![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-blue.svg?style=for-the-badge&logo=GitHub-Copilot&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-blue.svg?style=for-the-badge&logo=GitHub&logoColor=white)
 
 ## Contact
 <p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine, elle s'occupera de vous comme il faut...</p>
@@ -33,9 +30,11 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 
 <br>
 
+## ⚠️⚠️⚠️ PREVENTION ⚠️⚠️⚠️
+
 <p align="left" style="font-family: 'Courier New', monospace; font-size: 1.9em; color: #333;">
   ENQUETE <br>
-  COUSIN GERMANS: L'ANGLE <br>
+  COUSIN GERMAINS: L'ANGLE <br>
   MORT DE LA LUTTE CONTRE <br>
   L'INCEST
 </p>
