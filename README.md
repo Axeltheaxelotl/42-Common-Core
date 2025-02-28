@@ -23,7 +23,7 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
 
 
 ## Contact
-<p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine de Sam, elle s'occupera de vous comme il faut...</p>
+<p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine, elle s'occupera de vous comme il faut...</p>
 <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" style="width:300px; margin-left:5px;">
 
 <br>
@@ -35,6 +35,6 @@ Le programme inclut la gestion de projet et d'autres activités passionnantes.
   L'INCEST
 </p>
 
-<p align="center" style="font-family: 'Courier New', monospace; font-size: 1.3em; color: #333;">
+<p align="center" style="font-family: 'Courier New', monospace; font-size: 1.3em; color: #333; border: 2px solid #333; padding: 20px;">
   Trop souvent considérées comme des épisodes de «touche-pipi» et d’exploration, les violences sexuelles d’un cousin sur un autre sont aussi méconnues que taboues. Un phénomène d’ampleur auquel la Ciivise veut s’attaquer
 <p>
