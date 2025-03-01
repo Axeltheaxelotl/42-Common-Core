@@ -23,18 +23,12 @@
 <p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine, elle s'occupera de vous comme il faut...</p>
 
 <p align="center">
-  <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" alt="Sam et sa cousine" style="width:900px; height:700px;">
+  <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" alt="Sam et sa cousine" style="width:700px; height:300px;">
 </p>
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Axeltheaxelotl&theme=github_dark" alt="Résumé du profil" width="80%"/>
 </p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Axeltheaxelotl&repo=42-Common-Core&title_color=FF0000&text_color=ffffff&bg_color=0d1117" alt="Dépôt épinglé" width="48%"/>
-  <img src="https://github-readme-activity-graph.cyclic.app/graph?username=Axeltheaxelotl&theme=github-dark&color=FF0000&line=FF0000&point=ffffff&area=true&hide_border=true" alt="Graphique d'activité" width="48%"/>
-</p>
-
 
 <h1>
 </h1>
@@ -42,7 +36,11 @@
 
 <br>
 
-## ⚠️⚠️⚠️ PREVENTION ⚠️⚠️⚠️
+<h1>
+  <p align="center" style="font-family: 'Courier New', monospace; font-size: 1.7em; color: #333; border: 2px solid #333; padding: 20px;">
+   ⚠️⚠️⚠️ PREVENTION ⚠️⚠️⚠️
+  </p>
+</h1>
 
 <p align="left" style="font-family: 'Courier New', monospace; font-size: 2.5em; color: #333;">
   ENQUETE <br>
@@ -50,9 +48,6 @@
   MORT DE LA LUTTE CONTRE <br>
   L'INCEST
 </p>
-
-<h1>
-</h1>
 
 <p align="center" style="font-family: 'Courier New', monospace; font-size: 1.3em; color: #333; border: 2px solid #333; padding: 20px;">
   Trop souvent considérées comme des épisodes de «touche-pipi» et d’exploration, les violences sexuelles d’un cousin sur un autre sont aussi méconnues que taboues. Un phénomène d’ampleur auquel la Ciivise veut s’attaquer
