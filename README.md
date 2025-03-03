@@ -13,7 +13,7 @@
   <img src="https://i.pinimg.com/736x/23/5a/0a/235a0a71427978a9ee6123d940e45269.jpg" alt="Sam et sa cousine" style="width:1000px; height:300px;">
 </p>
 
-## Ressources
+## Ressources :
 
 <div align="center">
   <table style="border: none;">
@@ -44,7 +44,8 @@
   3. utilise ChatGPT pour arranger la chose
 </p>
 
-## Contact
+## Contact:
+
 <p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine, elle s'occupera de vous comme il faut...</p>
 
 <p align="center">
