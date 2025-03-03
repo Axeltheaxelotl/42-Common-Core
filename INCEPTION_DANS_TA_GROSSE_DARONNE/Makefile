@@ -1,71 +1,35 @@
-#############################################################
-# Makefile for inception
-#############################################################
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: alanty <alanty@student.42luxembourg.lu     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/03/03 14:31:15 by alanty            #+#    #+#              #
+#    Updated: 2025/03/03 14:31:16 by alanty           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME 			:= inception
-DOCKER-COMPOSE 	:= ./srcs/docker-compose.yaml
-ENV_FILE 		:= ./srcs/.env
-VOLUMES_DIR 	:= /home/alanty42/data
+include ./srcs/.env
+export
 
-all: build
+all:
+	sudo grep -q "127.0.0.1 alanty.42.fr" /etc/hosts || sudo echo "127.0.0.1 alanty.42.fr" >> /etc/hosts
+	sudo grep -q "127.0.0.1 www.alanty.42.fr" /etc/hosts || sudo echo "127.0.0.1 www.alanty.42.fr" >> /etc/hosts
+	mkdir -p ~/data
+	chmod 777 -R ~/data
+	cd srcs && docker compose build && docker compose up -d
 
-build: setup
-	@echo $(OR) "⣿⣿⣿ Inception ⣿⣿⣿" $(RES)
-	docker compose -f $(DOCKER-COMPOSE) --env-file $(ENV_FILE) up -d --build
+clean:
+	cd srcs && docker compose down
 
-start:
-	docker compose -f $(DOCKER-COMPOSE) start
+fclean:
+	make clean
+	docker system prune --all
+	sudo rm -rf /home/alanty/data
+	sudo sed -i '/127\.0\.0\.1 alanty\.42\.fr/d' /etc/hosts
+	sudo sed -i '/127\.0\.0\.1 www\.alanty\.42\.fr/d' /etc/hosts
+re:
+	make fclean
+	make all
 
-stop:
-	docker compose -f $(DOCKER-COMPOSE) stop
-
-down:
-	docker compose -f $(DOCKER-COMPOSE) down 
-
-ps:
-	docker ps
-
-clean: stop
-	docker compose -f $(DOCKER-COMPOSE) down
-
-fclean: clean
-	docker compose -f $(DOCKER-COMPOSE) down --remove-orphans
-	docker compose -f $(DOCKER-COMPOSE) down --volumes
-
-# docker rmi -f $(docker images -qa)
-# docker volume rm $(docker volume ls ) 2>/dev/null
-# docker network rm $(docker network ls) 2>/dev/null
-
-prune:
-	@echo $(PK) "⣿⣿⣿ make prune ⣿⣿⣿ "$(RES)
-	docker image prune -a
-	sudo rm -rf $(VOLUMES_DIR)
-	@sudo sed -i '1s/alanty.42.fr www.alanty.42.fr/localhost/' '/etc/hosts'
-	@sudo cat /etc/hosts | head -n 1
-
-re: fclean all
-	
-
-images:
-	docker images -qa
-
-network:
-	docker network ls
-
-volume:
-	docker volume ls
-
-logs:
-	docker logs -t -f $$(docker compose -f $(DOCKER-COMPOSE) ps -q nginx)
-
-
-help:
-	@echo $(OR)Inception $(PK)help$(RES)
-
-.PHONY: all build start stop down ps clean fclean \
-		re images network volume logs help
-
-#### ANSI escape codes ###
-OR = "\33[1;38:5:214m"
-PK = "\33[1;95:185:55m"
-RES = "\33[0m"

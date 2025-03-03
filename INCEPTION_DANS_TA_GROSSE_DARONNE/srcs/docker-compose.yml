@@ -1,0 +1,44 @@
+services:
+  nginx:
+    build: ./requirements/nginx
+    container_name: nginx
+    image: nginx
+    ports:
+      - "443:443"
+    env_file:
+      - .env
+    volumes:
+      - /home/alanty/data/wordpress:/var/www/html
+    depends_on:
+      - wordpress
+    networks:
+      - docker-network
+    restart: unless-stopped
+  wordpress:
+    build: ./requirements/wordpress
+    container_name: wordpress
+    image: wordpress
+    env_file:
+      - .env
+    volumes:
+      - /home/alanty/data/wordpress:/var/www/html
+    depends_on:
+      - mariadb
+    networks:
+      - docker-network
+    restart: unless-stopped
+  mariadb:
+    build: ./requirements/mariadb
+    container_name: mariadb
+    image: mariadb
+    env_file:
+      - .env
+    volumes:
+      - /home/alanty/data/mariadb:/var/lib/mysql
+    networks:
+      - docker-network
+    restart: unless-stopped
+
+networks:
+  docker-network:
+    driver: bridge
