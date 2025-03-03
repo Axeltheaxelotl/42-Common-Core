@@ -15,12 +15,24 @@
 
 ## Ressources
 
-<br>
-
-![SamGPT](https://img.shields.io/badge/ChatGPT-white.svg?style=for-the-badge&logo=ChatGPT&logoColor=black)
-![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-white.svg?style=for-the-badge&logo=GitHub-Copilot&logoColor=black)
-![GitHub](https://img.shields.io/badge/GitHub-white.svg?style=for-the-badge&logo=GitHub&logoColor=black)
-![Sam Core](https://img.shields.io/badge/sam%20core-white.svg?style=for-the-badge)
+<div align="center">
+  <table style="border: none;">
+    <tr style="text-align: center;">
+      <td>
+        <img src="https://img.shields.io/badge/ChatGPT-white.svg?style=for-the-badge&logo=ChatGPT&logoColor=black" />
+      </td>
+      <td>
+        <img src="https://img.shields.io/badge/GitHub%20Copilot-white.svg?style=for-the-badge&logo=GitHub-Copilot&logoColor=black" />
+      </td>
+      <td>
+        <img src="https://img.shields.io/badge/GitHub-white.svg?style=for-the-badge&logo=GitHub&logoColor=black" />
+      </td>
+      <td>
+        <img src="https://img.shields.io/badge/sam%20core-white.svg?style=for-the-badge" />
+      </td>
+    </tr>
+  </table>
+</div>
 
 <br>
 
