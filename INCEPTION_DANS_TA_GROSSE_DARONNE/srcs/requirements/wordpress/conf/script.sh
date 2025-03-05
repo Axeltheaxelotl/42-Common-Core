@@ -42,8 +42,4 @@ sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/g' /etc/php/7.3/fpm
 
 mkdir /run/php
 
-
-
-wp redis enable --allow-root
-
 /usr/sbin/php-fpm7.3 -F
