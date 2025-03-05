@@ -23,7 +23,7 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
     DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
     ALTER USER 'root'@'localhost' IDENTIFIED BY '$SQL_ROOT_PASSW';
     CREATE DATABASE wordpress CHARACTER SET utf8 COLLATE utf8_general_ci;
-    CREATE USER '$SQL_USR'@'%' IDENTIFIED by '$SQL_PASSW';
+    CREATE USER '$SQL_USR'@'%' IDENTIFIED by '$SQL_ PASSW';
     GRANT ALL PRIVILEGES ON wordpress.* TO '$SQL_USR'@'%';
     GRANT ALL PRIVILEGES ON *.* TO '$SQL_USR'@'mariadb' IDENTIFIED BY '$SQL_PASSW';
 	FLUSH PRIVILEGES;

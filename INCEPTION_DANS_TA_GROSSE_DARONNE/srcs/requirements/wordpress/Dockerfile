@@ -1,4 +1,5 @@
-FROM debian:buster
+# dedian:bullseye
+FROM debian:buster 
 
 RUN apt update -y 
 
