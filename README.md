@@ -5,7 +5,7 @@
 
 <h1>
   <p align="center" style="font-family: 'Courier New', monospace; font-size: 1.7em; color: #333; border: 2px solid #333; padding: 20px;">
-   Bienvenue dans le projet 42 Common Core. Ce projet est dédié à toutes les cousine
+   Bienvenue dans le projet 42 Common Core. Ce projet est dédié à la cousine a sam
   </p>
 </h1>
 
@@ -46,7 +46,7 @@
 
 ## Contact:
 
-<p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine, elle s'occupera de vous comme il faut...</p>
+<p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine a sam, elle s'occupera de vous comme il faut...</p>
 
 <p align="center">
   <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" alt="Sam et sa cousine" style="width:700px; height:300px;">
