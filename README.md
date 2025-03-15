@@ -5,7 +5,7 @@
 
 <h1>
   <p align="center" style="font-family: 'Courier New', monospace; font-size: 1.7em; color: #333; border: 2px solid #333; padding: 20px;">
-   Bienvenue dans le projet 42 Common Core. Ce projet est dédié à la cousine a sam
+   Bienvenue dans le projet 42 Common Core. Ce projet est dédié a ma cousine
   </p>
 </h1>
 
