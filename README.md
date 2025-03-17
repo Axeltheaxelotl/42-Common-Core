@@ -49,7 +49,7 @@
 <p style="font-size:18px;">Pour plus d'informations, veuillez contacter la cousine a sam, elle s'occupera de vous comme il faut...</p>
 
 <p align="center">
-  <img src="https://i.pinimg.com/736x/af/08/34/af0834c6638186a029558f318c45a53e.jpg" alt="Sam et sa cousine" style="width:700px; height:300px;">
+  <img src="https://i.pinimg.com/736x/58/24/de/5824dea15f8669ca83facbe91d8bc345.jpg" alt="Sam et sa cousine" style="width:700px; height:300px;">
 </p>
 
 <p align="center">
